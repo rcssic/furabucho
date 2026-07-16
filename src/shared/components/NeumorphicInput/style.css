@@ -1,16 +1,23 @@
 .neo-input {
   width: 100%;
-  max-width: 800px;
-  padding: 24px 32px;
-  border-radius: 40px;
-  border: none;
-  background: var(--bg-color);
+  max-width: 600px; /* Reduzido de 800px */
+  padding: 16px 24px; /* Bem menor */
+  border-radius: 12px; /* Menos arredondado */
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  background: var(--surface-color);
   color: var(--text-primary);
-  font-size: 1.5rem;
+  font-size: 1rem; /* Reduzido de 1.5rem */
   box-shadow: var(--shadow-in);
   outline: none;
   transition: all 0.3s ease;
 }
 
-.neo-input::placeholder { color: var(--text-secondary); }
-.neo-input:focus { box-shadow: var(--shadow-in-focus); }
+.neo-input::placeholder { 
+  color: var(--text-secondary); 
+  font-weight: 400;
+}
+
+.neo-input:focus { 
+  box-shadow: var(--shadow-in-focus); 
+  border-color: rgba(255, 255, 255, 0.05);
+}
