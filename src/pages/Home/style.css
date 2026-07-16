@@ -1,0 +1,68 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+  gap: 80px;
+}
+
+.search-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  margin-top: 24px;
+  background: var(--bg-color);
+  width: 100%;
+  max-width: 800px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-out);
+  padding: 16px;
+  z-index: 10;
+}
+
+.search-item {
+  padding: 16px 24px;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.2rem;
+}
+
+.search-item:hover {
+  box-shadow: var(--shadow-in);
+}
+
+.neo-button {
+  padding: 20px 48px;
+  border-radius: 40px;
+  border: none;
+  background: var(--bg-color);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: var(--shadow-out);
+  transition: all 0.3s ease;
+}
+
+.neo-button:hover {
+  box-shadow: var(--shadow-out-hover);
+  transform: translateY(-2px);
+}
+
+.neo-button:active {
+  box-shadow: var(--shadow-in);
+  transform: translateY(0);
+}
