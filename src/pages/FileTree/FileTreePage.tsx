@@ -3,97 +3,92 @@ import './style.css';
 
 export const FileTreePage: React.FC = () => {
   return (
-    <div className="filetree-container">
-      <header className="filetree-header">
-        <div className="header-titles">
-          <h1>Arquitetura do Projeto</h1>
-          <p className="subtitle">Guia estrutural e padrões da aplicação</p>
-        </div>
-        <button className="neo-button-small" onClick={() => window.location.hash = '/'}>
-          ← Voltar
-        </button>
-      </header>
-
-      <div className="cards-grid">
-        {/* Card 1: Árvore de Diretórios */}
-        <div className="doc-card">
-          <div className="card-header">
-            <span className="icon">📂</span>
-            <h2>Árvore de Diretórios</h2>
+    <div className="filetree-wrapper">
+      <div className="filetree-content">
+        
+        {/* Cabeçalho */}
+        <header className="filetree-header">
+          <button className="neo-btn-back" onClick={() => window.location.hash = '/'}>
+            <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Voltar
+          </button>
+          <div className="header-text">
+            <h1>Arquitetura do Projeto</h1>
+            <p>Guia estrutural e padrões de desenvolvimento</p>
           </div>
-          <p className="card-text">
-            Representação dos módulos. A pasta <strong>pages/</strong> é projetada para escalabilidade infinita.
+        </header>
+
+        {/* Card: Árvore */}
+        <section className="neo-section">
+          <div className="section-title">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none">
+              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+            </svg>
+            <h2>Estrutura de Diretórios</h2>
+          </div>
+          <p className="section-desc">
+            A aplicação segue uma arquitetura modular. A pasta de páginas é projetada para descoberta automática e escalabilidade horizontal.
           </p>
-          
-          <div className="terminal-window">
-            <div className="terminal-header">
-              <span className="dot red"></span>
-              <span className="dot yellow"></span>
-              <span className="dot green"></span>
-            </div>
+          <div className="code-block">
             <pre>
 {`src/
-  app/       - Configurações e Rotas
-  core/      - Serviços e Auto-descoberta
-  shared/    - Componentes de UI
-  pages/     - Módulos independentes`}
+  app/       - Configurações, roteamento e estilos globais
+  core/      - Serviços centrais, tipos e auto-descoberta (Vite glob)
+  shared/    - Componentes de UI e utilitários reutilizáveis
+  pages/     - Módulos independentes e isolados de cada página`}
             </pre>
           </div>
-        </div>
+        </section>
 
-        {/* Card 2: Boas Práticas */}
-        <div className="doc-card">
-          <div className="card-header">
-            <span className="icon">🎯</span>
-            <h2>Boas Práticas</h2>
+        {/* Card: Práticas */}
+        <section className="neo-section">
+          <div className="section-title">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <h2>Diretrizes de Desenvolvimento</h2>
           </div>
-          <div className="practices-list">
-            <div className="practice-item">
-              <span className="practice-icon">⚡</span>
-              <div>
-                <strong>Independência</strong>
-                <p>Nenhuma página deve importar dependências locais de outra.</p>
-              </div>
-            </div>
-            <div className="practice-item">
-              <span className="practice-icon">🤖</span>
-              <div>
-                <strong>Auto-registro</strong>
-                <p>O <code>metadata.ts</code> cadastra a página automaticamente na Home.</p>
-              </div>
-            </div>
-            <div className="practice-item">
-              <span className="practice-icon">📦</span>
-              <div>
-                <strong>Coesão</strong>
-                <p>Tudo o que a página usa fica dentro da própria pasta.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          <ul className="guidelines-list">
+            <li>
+              <strong>Desacoplamento:</strong> Páginas são contêineres fechados. Elas não devem importar dependências locais de outras páginas, apenas de <code>core/</code> ou <code>shared/</code>.
+            </li>
+            <li>
+              <strong>Registro Dinâmico:</strong> Não há lista manual de rotas. O arquivo <code>metadata.ts</code> cadastra a página em tempo de compilação.
+            </li>
+            <li>
+              <strong>Coesão Visual:</strong> O design system é centralizado. Utilize as variáveis CSS do tema global para manter o Neomorfismo consistente.
+            </li>
+          </ul>
+        </section>
 
-        {/* Card 3: Prompt IA (Ocupa a largura total na parte de baixo) */}
-        <div className="doc-card full-width">
-          <div className="card-header">
-            <span className="icon">🧠</span>
-            <h2>Como gerar novas páginas via IA</h2>
+        {/* Card: Prompt */}
+        <section className="neo-section">
+          <div className="section-title">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none">
+              <polyline points="4 17 10 11 4 5"></polyline>
+              <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+            <h2>Prompt de Geração via IA</h2>
           </div>
-          <p className="card-text">
-            Copie o prompt abaixo. Ele possui instruções diretas e separadas para garantir que a arquitetura seja respeitada.
+          <p className="section-desc">
+            Forneça este prompt para a IA garantir que o novo código respeite as restrições da arquitetura.
           </p>
-          
-          <div className="prompt-container">
-            <p className="prompt-text">
-              "Atue como um desenvolvedor Front-end Sênior. Crie uma nova página para minha aplicação seguindo estritamente a arquitetura existente."
+          <div className="prompt-block">
+            <p>
+              "Atue como um Engenheiro de Software Sênior. Crie uma nova página para minha aplicação seguindo estritamente a arquitetura existente."
             </p>
-            <p className="prompt-text">
+            <p>
               "Crie um módulo isolado em <strong>src/pages/[NomeDaPagina]/</strong> contendo: <code>index.ts</code>, <code>[Nome]Page.tsx</code>, <code>style.css</code> e obrigatoriamente <code>metadata.ts</code>."
             </p>
-            <p className="prompt-text">
-              "O metadata.ts deve exportar: id, title, description, icon (emoji) e keywords. A página deve ser independente, utilizar a paleta de cores CSS Variables do projeto (sem bibliotecas externas) e organizar sua lógica separadamente."
+            <p>
+              "O metadata.ts deve exportar: id, title, description, icon (svg) e keywords. A página deve ser coesa, limpa (Clean Code), utilizar a paleta de cores CSS Variables do projeto (sem bibliotecas externas) e não quebrar o isolamento de módulos."
             </p>
           </div>
-        </div>
+        </section>
+
       </div>
     </div>
   );
