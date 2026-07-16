@@ -1,33 +1,74 @@
 .launchpad-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(42, 43, 48, 0.7);
-  backdrop-filter: blur(12px);
+  background: rgba(15, 17, 23, 0.6); /* Mais escuro */
+  backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn 0.2s ease;
 }
+
 .launchpad-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 24px;
   width: 90vw;
-  max-width: 1200px;
+  max-width: 1000px;
   max-height: 80vh;
   overflow-y: auto;
   padding: 32px;
 }
+
 .neo-card {
-  background: var(--bg-color);
-  border-radius: 24px;
-  padding: 24px;
+  background: var(--surface-color);
+  border: var(--border-subtle);
+  border-radius: 16px;
+  padding: 24px 20px;
   text-align: center;
   box-shadow: var(--shadow-out);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
-.neo-card:hover { box-shadow: var(--shadow-out-hover); transform: translateY(-4px); }
-.neo-card-icon { font-size: 3rem; margin-bottom: 16px; color: var(--accent-color); }
-.neo-close-btn { /* Botão circular neumórfico isolado */ }
+
+.neo-card:hover { 
+  box-shadow: var(--shadow-out-hover); 
+  transform: translateY(-2px); 
+}
+
+.neo-card-icon { 
+  font-size: 2rem; /* Ícone menor */
+  margin-bottom: 8px; 
+}
+
+.neo-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.neo-card p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.neo-close-btn { 
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: var(--border-subtle);
+  background: var(--surface-color);
+  color: var(--text-secondary);
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-out);
+}
+
+.neo-close-btn:hover { color: var(--text-primary); }
