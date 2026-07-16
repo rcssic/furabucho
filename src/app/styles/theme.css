@@ -1,18 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-
 :root {
-  --bg-color: #0f1117;
-  --surface-color: #16181f;
+  /* Paleta baseada em Azul Profundo (Midnight Blue) */
+  --bg-color: #0b1121; /* Fundo principal */
+  --surface-color: #111827; /* Fundo dos cards e inputs */
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
-  --accent-color: #3b82f6;
-  --border-subtle: 1px solid rgba(255, 255, 255, 0.03);
+  --accent-color: #3b82f6; /* Azul vibrante para detalhes */
+  --border-subtle: 1px solid rgba(59, 130, 246, 0.1); /* Borda com leve toque de azul */
   
-  /* Neumorphism Moderno e Sutil */
-  --shadow-out: 6px 6px 14px rgba(0, 0, 0, 0.6), -4px -4px 10px rgba(255, 255, 255, 0.02);
-  --shadow-out-hover: 8px 8px 20px rgba(0, 0, 0, 0.7), -6px -6px 14px rgba(255, 255, 255, 0.03);
-  --shadow-in: inset 4px 4px 8px rgba(0, 0, 0, 0.6), inset -3px -3px 8px rgba(255, 255, 255, 0.02);
-  --shadow-in-focus: inset 6px 6px 12px rgba(0, 0, 0, 0.8), inset -4px -4px 10px rgba(255, 255, 255, 0.03);
+  /* Neumorphism adaptado para a paleta azul */
+  --shadow-out: 8px 8px 16px rgba(0, 0, 0, 0.5), -4px -4px 10px rgba(255, 255, 255, 0.03);
+  --shadow-out-hover: 12px 12px 20px rgba(0, 0, 0, 0.6), -6px -6px 14px rgba(255, 255, 255, 0.04);
+  --shadow-in: inset 4px 4px 8px rgba(0, 0, 0, 0.6), inset -3px -3px 8px rgba(255, 255, 255, 0.03);
+  --shadow-in-focus: inset 6px 6px 12px rgba(0, 0, 0, 0.8), inset -4px -4px 10px rgba(59, 130, 246, 0.1);
 }
 
 * {
@@ -24,13 +23,12 @@
 body {
   background-color: var(--bg-color);
   color: var(--text-primary);
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Poppins', sans-serif;
   min-height: 100vh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Scrollbar profissional */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: var(--bg-color); }
-::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 4px; }
