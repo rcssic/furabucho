@@ -1,0 +1,33 @@
+.launchpad-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(42, 43, 48, 0.7);
+  backdrop-filter: blur(12px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+.launchpad-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 32px;
+  width: 90vw;
+  max-width: 1200px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 32px;
+}
+.neo-card {
+  background: var(--bg-color);
+  border-radius: 24px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: var(--shadow-out);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.neo-card:hover { box-shadow: var(--shadow-out-hover); transform: translateY(-4px); }
+.neo-card-icon { font-size: 3rem; margin-bottom: 16px; color: var(--accent-color); }
+.neo-close-btn { /* Botão circular neumórfico isolado */ }
