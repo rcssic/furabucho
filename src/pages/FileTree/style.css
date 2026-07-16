@@ -1,0 +1,49 @@
+.page-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.content h2 {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  color: var(--accent-color);
+}
+
+.prompt-box {
+  background: #222327;
+  padding: 24px;
+  border-radius: 16px;
+  margin-top: 16px;
+  box-shadow: inset 4px 4px 8px #1a1b1e, inset -4px -4px 8px #2c2d32;
+  color: #a0a0a0;
+  line-height: 1.6;
+}
+
+.neo-card-large {
+  padding: 40px;
+  border-radius: 32px;
+  box-shadow: var(--shadow-out);
+}
+
+.neo-button-small {
+  padding: 12px 24px;
+  border-radius: 20px;
+  border: none;
+  background: var(--bg-color);
+  color: var(--text-primary);
+  cursor: pointer;
+  box-shadow: var(--shadow-out);
+  transition: all 0.3s ease;
+}
+
+.neo-button-small:hover {
+  box-shadow: var(--shadow-out-hover);
+}
