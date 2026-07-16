@@ -3,8 +3,8 @@ import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { HomePage } from '../pages/Home/HomePage';
 import { getPagesCatalog } from '../core/catalog';
 
-// Importação dinâmica dos componentes (Lazy Loading) para escalabilidade com centenas de páginas
-const pageComponents = import.meta.glob('../pages/**/*Page.tsx');
+// Pega TODOS os arquivos que terminam com Page.tsx dentro da pasta pages
+const pageModules = import.meta.glob('../pages/**/*Page.tsx');
 
 export const App: React.FC = () => {
   const catalog = getPagesCatalog();
@@ -15,29 +15,55 @@ export const App: React.FC = () => {
         <Route path="/" element={<HomePage />} />
         
         {catalog.map(page => {
-          // Resolve o path do componente dinamicamente com base no ID
-          // Assume-se que a estrutura da página contém o componente principal
-          // Alternativa robusta para o template: exportação síncrona ou mapeamento manual no router da própria página, mas automatizado para escalar.
+          // Previne duplicar a página Home
+          if (page.id.toLowerCase() === 'home') return null;
+
+          // Normaliza o ID para fazer a busca independente da nomenclatura da pasta
+          const normalizedId = page.id.replace(/-/g, '').toLowerCase();
           
-          // Para este escopo, usaremos importações diretas resolvidas via Vite.
-          // O id deve bater com o nome da pasta (ex: FileTree -> file-tree)
-          
+          const modulePath = Object.keys(pageModules).find(path => 
+            path.toLowerCase().includes(normalizedId)
+          );
+
+          if (!modulePath) {
+            console.warn(`Arquivo não encontrado para a página: ${page.title}`);
+            return null;
+          }
+
+          const importModule = pageModules[modulePath] as () => Promise<any>;
+
+          // Carregamento Lazy à prova de falhas (Ignora flags internas do Vite)
+          const LazyComponent = React.lazy(() => 
+            importModule().then((module) => {
+              // O SEGREDO ESTÁ AQUI: Procuramos exclusivamente a exportação que seja uma função (O componente React)
+              const componentExport = Object.values(module).find(
+                (exportItem) => typeof exportItem === 'function'
+              );
+              
+              if (!componentExport) {
+                return { default: () => <div style={{ color: 'white', padding: '40px' }}>Erro: Componente React não encontrado no arquivo.</div> };
+              }
+
+              return { default: componentExport as React.ComponentType<any> };
+            }).catch(() => {
+              return { default: () => <div style={{ color: 'white', padding: '40px' }}>Falha catastrófica ao carregar o módulo da página.</div> };
+            })
+          );
+
           return (
             <Route 
               key={page.id} 
               path={page.path} 
               element={
-                <React.Suspense fallback={<div>Carregando...</div>}>
-                  {React.createElement(
-                    React.lazy(pageComponents[`../pages/${page.id}/${page.title.replace(' ', '')}Page.tsx`] as any)
-                  )}
+                <React.Suspense fallback={<div style={{ padding: '40px', color: 'var(--text-secondary)' }}>Carregando página...</div>}>
+                  <LazyComponent />
                 </React.Suspense>
               } 
             />
           );
         })}
         
-        {/* Fallback */}
+        {/* Fallback: se a url for inválida, volta pra Home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </HashRouter>
