@@ -1,109 +1,187 @@
-.page-container {
+.filetree-container {
   padding: 60px 24px;
-  max-width: 800px;
+  max-width: 1100px; /* Mais largo para o grid respirar */
   margin: 0 auto;
 }
 
-.page-header {
+.filetree-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 56px;
-  padding-bottom: 24px;
-  border-bottom: var(--border-subtle);
+  margin-bottom: 48px;
 }
 
-.page-header h1 {
-  font-size: 2rem;
-  font-weight: 600;
+.header-titles h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
   color: var(--text-primary);
+  letter-spacing: -0.5px;
 }
 
 .subtitle {
   color: var(--accent-color);
-  font-size: 0.95rem;
-  margin-top: 4px;
+  font-size: 1rem;
+  margin-top: 8px;
+  letter-spacing: 0.5px;
 }
 
-.doc-section {
-  margin-bottom: 48px;
+/* O Segredo do visual moderno: Grid em duas colunas */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
 }
 
-.doc-section h2 {
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin-bottom: 16px;
+/* Cards Neomórficos super destacados */
+.doc-card {
+  background: var(--surface-color);
+  padding: 32px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.6), -6px -6px 16px rgba(255, 255, 255, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-card.full-width {
+  grid-column: 1 / -1; /* Faz o card do prompt ocupar a tela toda embaixo */
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.card-header .icon {
+  font-size: 1.8rem;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-in);
+}
+
+.card-header h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
   color: var(--text-primary);
+  letter-spacing: 0.5px;
 }
 
-.doc-section p {
+.card-text {
   color: var(--text-secondary);
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.8; /* Aumentado espaço entre linhas */
   margin-bottom: 24px;
+  letter-spacing: 0.3px; /* Aumentado espaço entre letras */
 }
 
-.doc-list {
-  list-style: none;
+/* Janela de Terminal Estilizada */
+.terminal-window {
+  background: #060913; /* Bem escuro para dar contraste */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  box-shadow: inset 4px 4px 10px rgba(0,0,0,0.8);
+  margin-top: auto;
+}
+
+.terminal-header {
+  background: #0f1524;
+  padding: 12px 16px;
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.dot.red { background: #ef4444; }
+.dot.yellow { background: #eab308; }
+.dot.green { background: #22c55e; }
+
+.terminal-window pre {
+  padding: 24px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  line-height: 2; /* Linhas de código espaçadas */
+  color: #93c5fd; /* Azul pastel */
+  white-space: pre-wrap;
+}
+
+/* Lista de Práticas */
+.practices-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: auto;
 }
 
-.doc-list li {
-  background: var(--surface-color);
-  padding: 16px 20px;
+.practice-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 16px;
   border-radius: 12px;
-  border: var(--border-subtle);
-  color: var(--text-secondary);
-  line-height: 1.5;
-  box-shadow: var(--shadow-out);
+  border: 1px solid rgba(255, 255, 255, 0.02);
 }
 
-.doc-list li strong {
+.practice-icon {
+  font-size: 1.5rem;
+}
+
+.practice-item strong {
+  display: block;
   color: var(--text-primary);
-  margin-right: 8px;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
 }
 
-/* Substituindo o card monolítico gigante por pequenos cards de destaque */
-.neo-card-highlight pre {
-  background: var(--surface-color);
-  padding: 24px;
-  border-radius: 16px;
-  font-size: 0.9rem;
+.practice-item p {
   color: var(--text-secondary);
-  box-shadow: var(--shadow-in);
-  border: var(--border-subtle);
-  overflow-x: auto;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
-.neo-card-prompt {
-  background: rgba(59, 130, 246, 0.05); /* Fundo com toque azulado */
+/* Container do Prompt (Neomorfismo interno) */
+.prompt-container {
+  background: rgba(59, 130, 246, 0.04);
   padding: 32px;
   border-radius: 16px;
-  box-shadow: var(--shadow-in);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: inset 6px 6px 12px rgba(0,0,0,0.6), inset -4px -4px 10px rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Separa os parágrafos claramente */
 }
 
-.neo-card-prompt code {
-  color: var(--text-primary);
-  font-size: 0.95rem;
+.prompt-text {
+  font-family: 'Courier New', Courier, monospace;
+  color: #cbd5e1;
+  font-size: 1rem;
   line-height: 1.8;
+  letter-spacing: 0.5px;
 }
 
-.neo-button-small {
-  padding: 10px 20px;
-  border-radius: 8px;
-  border: var(--border-subtle);
-  background: var(--surface-color);
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  cursor: pointer;
-  box-shadow: var(--shadow-out);
-  transition: all 0.2s ease;
+.prompt-text strong {
+  color: var(--accent-color);
 }
 
-.neo-button-small:hover {
-  color: var(--text-primary);
-  box-shadow: var(--shadow-out-hover);
+.prompt-text code {
+  background: rgba(0,0,0,0.4);
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #f8fafc;
+}
+
+/* Responsividade: Volta para 1 coluna em telas pequenas */
+@media (max-width: 850px) {
+  .cards-grid { grid-template-columns: 1fr; }
+  .filetree-header { flex-direction: column; gap: 24px; align-items: flex-start; }
 }
