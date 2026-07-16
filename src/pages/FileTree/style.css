@@ -1,6 +1,6 @@
 .page-container {
-  padding: 40px 24px;
-  max-width: 900px;
+  padding: 60px 24px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -8,71 +8,96 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 56px;
+  padding-bottom: 24px;
+  border-bottom: var(--border-subtle);
 }
 
 .page-header h1 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
+  color: var(--text-primary);
 }
 
-.neo-card-large {
+.subtitle {
+  color: var(--accent-color);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+.doc-section {
+  margin-bottom: 48px;
+}
+
+.doc-section h2 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.doc-section p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.doc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.doc-list li {
   background: var(--surface-color);
-  padding: 32px;
-  border-radius: 16px;
+  padding: 16px 20px;
+  border-radius: 12px;
   border: var(--border-subtle);
+  color: var(--text-secondary);
+  line-height: 1.5;
   box-shadow: var(--shadow-out);
 }
 
-.content h2 {
-  font-size: 1.1rem;
-  margin-top: 32px;
-  margin-bottom: 16px;
+.doc-list li strong {
   color: var(--text-primary);
-  font-weight: 500;
+  margin-right: 8px;
 }
 
-.content p {
-  color: var(--text-secondary);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: 8px;
-}
-
-pre {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 16px;
-  border-radius: 8px;
-  font-size: 0.85rem;
+/* Substituindo o card monolítico gigante por pequenos cards de destaque */
+.neo-card-highlight pre {
+  background: var(--surface-color);
+  padding: 24px;
+  border-radius: 16px;
+  font-size: 0.9rem;
   color: var(--text-secondary);
   box-shadow: var(--shadow-in);
-  border: 1px solid rgba(255, 255, 255, 0.02);
+  border: var(--border-subtle);
   overflow-x: auto;
 }
 
-.prompt-box {
-  background: rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 16px;
+.neo-card-prompt {
+  background: rgba(59, 130, 246, 0.05); /* Fundo com toque azulado */
+  padding: 32px;
+  border-radius: 16px;
   box-shadow: var(--shadow-in);
-  border: 1px solid rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
-.prompt-box code {
-  color: #a0a0a0;
-  font-family: inherit;
-  font-size: 0.9rem;
-  line-height: 1.6;
+.neo-card-prompt code {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
 .neo-button-small {
-  padding: 8px 16px;
+  padding: 10px 20px;
   border-radius: 8px;
   border: var(--border-subtle);
   background: var(--surface-color);
   color: var(--text-secondary);
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   cursor: pointer;
   box-shadow: var(--shadow-out);
   transition: all 0.2s ease;
