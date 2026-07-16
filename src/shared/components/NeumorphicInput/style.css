@@ -1,0 +1,16 @@
+.neo-input {
+  width: 100%;
+  max-width: 800px;
+  padding: 24px 32px;
+  border-radius: 40px;
+  border: none;
+  background: var(--bg-color);
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  box-shadow: var(--shadow-in);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.neo-input::placeholder { color: var(--text-secondary); }
+.neo-input:focus { box-shadow: var(--shadow-in-focus); }
