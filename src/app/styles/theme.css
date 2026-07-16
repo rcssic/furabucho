@@ -1,0 +1,26 @@
+:root {
+  --bg-color: #2a2b30;
+  --text-primary: #e0e0e0;
+  --text-secondary: #9e9e9e;
+  --accent-color: #4a90e2;
+  
+  /* Neumorphism Shadows */
+  --shadow-out: 8px 8px 16px #242529, -8px -8px 16px #303137;
+  --shadow-out-hover: 12px 12px 20px #242529, -12px -12px 20px #303137;
+  --shadow-in: inset 4px 4px 8px #242529, inset -4px -4px 8px #303137;
+  --shadow-in-focus: inset 6px 6px 12px #222327, inset -6px -6px 12px #323339;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
