@@ -2,7 +2,7 @@ import { PageMetadata } from '../types/metadata';
 import { normalizeText } from '../utils/string'; // <-- Faltava esta linha!
 
 // O Vite busca todos os metadata.ts dentro de src/pages
-const metadataModules = import.meta.glob('../../pages/**/metadata.ts', { eager: true });
+const metadataModules = import.meta.glob('../../pages/**/metadata.{ts,tsx}', { eager: true });
 
 export const getPagesCatalog = (): PageMetadata[] => {
   const pages: PageMetadata[] = [];
