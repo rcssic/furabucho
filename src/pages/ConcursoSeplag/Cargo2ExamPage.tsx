@@ -144,3 +144,5 @@ const Cargo2ExamPage: React.FC = () => {
     </div>
   );
 };
+
+export default Cargo2ExamPage;
