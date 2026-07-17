@@ -8,21 +8,23 @@ export const FileTreePage: React.FC = () => {
         
         {/* Cabeçalho */}
         <header className="filetree-header">
-          <button className="neo-btn-back" onClick={() => window.location.hash = '/'}>
+          {/* AQUI ESTAVA neo-btn-back. CORRIGIDO PARA glass-btn-back */}
+          <button className="glass-btn-back" onClick={() => window.location.hash = '/'}>
             <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none">
               <line x1="19" y1="12" x2="5" y2="12"></line>
               <polyline points="12 19 5 12 12 5"></polyline>
             </svg>
             Voltar
           </button>
+          
           <div className="header-text">
             <h1>Arquitetura do Projeto</h1>
             <p>Guia estrutural e padrões de desenvolvimento</p>
           </div>
         </header>
 
-        {/* Card: Árvore */}
-        <section className="neo-section">
+        {/* Card: Árvore (AQUI ESTAVA neo-section. CORRIGIDO PARA glass-section) */}
+        <section className="glass-section">
           <div className="section-title">
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none">
               <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
@@ -43,8 +45,8 @@ export const FileTreePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Card: Práticas */}
-        <section className="neo-section">
+        {/* Card: Práticas (CORRIGIDO PARA glass-section) */}
+        <section className="glass-section">
           <div className="section-title">
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none">
               <polyline points="20 6 9 17 4 12"></polyline>
@@ -64,8 +66,8 @@ export const FileTreePage: React.FC = () => {
           </ul>
         </section>
 
-        {/* Card: Prompt */}
-        <section className="neo-section">
+        {/* Card: Prompt (CORRIGIDO PARA glass-section) */}
+        <section className="glass-section">
           <div className="section-title">
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none">
               <polyline points="4 17 10 11 4 5"></polyline>
