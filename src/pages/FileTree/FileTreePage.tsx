@@ -8,7 +8,6 @@ export const FileTreePage: React.FC = () => {
         
         {/* Cabeçalho */}
         <header className="filetree-header">
-          {/* AQUI ESTAVA neo-btn-back. CORRIGIDO PARA glass-btn-back */}
           <button className="glass-btn-back" onClick={() => window.location.hash = '/'}>
             <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none">
               <line x1="19" y1="12" x2="5" y2="12"></line>
@@ -23,7 +22,7 @@ export const FileTreePage: React.FC = () => {
           </div>
         </header>
 
-        {/* Card: Árvore (AQUI ESTAVA neo-section. CORRIGIDO PARA glass-section) */}
+        {/* Card: Árvore */}
         <section className="glass-section">
           <div className="section-title">
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none">
@@ -45,7 +44,7 @@ export const FileTreePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Card: Práticas (CORRIGIDO PARA glass-section) */}
+        {/* Card: Práticas */}
         <section className="glass-section">
           <div className="section-title">
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none">
@@ -58,15 +57,15 @@ export const FileTreePage: React.FC = () => {
               <strong>Desacoplamento:</strong> Páginas são contêineres fechados. Elas não devem importar dependências locais de outras páginas, apenas de <code>core/</code> ou <code>shared/</code>.
             </li>
             <li>
-              <strong>Registro Dinâmico:</strong> Não há lista manual de rotas. O arquivo <code>metadata.ts</code> cadastra a página em tempo de compilação.
+              <strong>Registro Dinâmico:</strong> Não há lista manual de rotas. O arquivo <code>metadata.tsx</code> cadastra a página em tempo de compilação.
             </li>
             <li>
-              <strong>Coesão Visual:</strong> O design system é centralizado. Utilize as variáveis CSS do tema global para manter o Neomorfismo consistente.
+              <strong>Isolamento Visual:</strong> Cada página é responsável por gerenciar seus próprios estilos internamente, garantindo que o módulo funcione ao ser exportado.
             </li>
           </ul>
         </section>
 
-        {/* Card: Prompt (CORRIGIDO PARA glass-section) */}
+        {/* Card: Prompt */}
         <section className="glass-section">
           <div className="section-title">
             <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none">
@@ -76,17 +75,20 @@ export const FileTreePage: React.FC = () => {
             <h2>Prompt de Geração via IA</h2>
           </div>
           <p className="section-desc">
-            Forneça este prompt para a IA garantir que o novo código respeite as restrições da arquitetura.
+            Copie o prompt abaixo e envie para a IA quando quiser criar uma nova página funcional.
           </p>
           <div className="prompt-block">
             <p>
-              "Atue como um Engenheiro de Software Sênior. Crie uma nova página para minha aplicação seguindo estritamente a arquitetura existente."
+              "Atue como um Engenheiro de Software Sênior especializado em React e TypeScript. Crie um novo módulo de página totalmente isolado para minha aplicação."
             </p>
             <p>
-              "Crie um módulo isolado em <strong>src/pages/[NomeDaPagina]/</strong> contendo: <code>index.ts</code>, <code>[Nome]Page.tsx</code>, <code>style.css</code> e obrigatoriamente <code>metadata.ts</code>."
+              "Crie uma pasta em <strong>src/pages/[NomeDaPagina]/</strong> contendo os seguintes arquivos: <code>index.ts</code>, <code>[Nome]Page.tsx</code>, <code>style.css</code> e <code>metadata.tsx</code>."
             </p>
             <p>
-              "O metadata.ts deve exportar: id, title, description, icon (svg) e keywords. A página deve ser coesa, limpa (Clean Code), utilizar a paleta de cores CSS Variables do projeto (sem bibliotecas externas) e não quebrar o isolamento de módulos."
+              "O arquivo <strong>metadata.tsx</strong> deve exportar por padrão (export default) um objeto contendo: <code>id</code> (string), <code>title</code> (string), <code>description</code> (string), <code>icon</code> (um elemento SVG puro do React) e <code>keywords</code> (array de strings)."
+            </p>
+            <p>
+              "A página deve ser completamente autossuficiente e ter um design moderno e profissional. Estilize a página utilizando apenas CSS puro no arquivo local <strong>style.css</strong>, sem depender de variáveis globais do meu projeto ou de bibliotecas de UI externas (como Material ou Tailwind)."
             </p>
           </div>
         </section>
