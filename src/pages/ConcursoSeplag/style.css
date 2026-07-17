@@ -1,124 +1,102 @@
-/* style.css */
 .glass-container {
     min-height: 100vh;
     padding: 60px 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #1d1d1f;
-    box-sizing: border-box;
+    background: linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:#1d1d1f;
+    box-sizing:border-box;
 }
 
-.glass-header {
-    text-align: center;
-    margin-bottom: 50px;
+.glass-header{
+    text-align:center;
+    margin-bottom:50px;
 }
 
-.glass-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    margin-bottom: 12px;
+.glass-header h1{
+    font-size:2.5rem;
+    font-weight:700;
+    margin-bottom:12px;
 }
 
-.glass-header p {
-    font-size: 1.2rem;
-    color: #515154;
+.glass-header p{
+    color:#515154;
+    font-size:1.2rem;
 }
 
-.glass-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
+.glass-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
 }
 
-.glass-card {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    border-radius: 24px;
-    padding: 30px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.glass-card{
+    background:rgba(255,255,255,.4);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.6);
+    border-radius:24px;
+    padding:30px;
+    transition:.3s;
 }
 
-.glass-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+.glass-card:hover{
+    transform:translateY(-4px);
 }
 
-.glass-card h2 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 24px;
-    color: #1d1d1f;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    padding-bottom: 12px;
+.glass-card h2{
+    margin-bottom:24px;
 }
 
-.glass-table {
-    width: 100%;
-    border-collapse: collapse;
+.glass-table{
+    width:100%;
+    border-collapse:collapse;
 }
 
-.glass-table th, .glass-table td {
-    text-align: left;
-    padding: 14px 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-    font-size: 0.95rem;
+.glass-table th,
+.glass-table td{
+    padding:12px;
+    text-align:left;
+    border-bottom:1px solid rgba(0,0,0,.05);
 }
 
-.glass-table th {
-    font-weight: 600;
-    color: #86868b;
+.glass-list{
+    list-style:none;
+    padding:0;
+    margin:0;
 }
 
-.glass-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.glass-list li{
+    padding:12px 0;
 }
 
-.glass-list li {
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-    font-size: 0.95rem;
-    line-height: 1.5;
+.full-width{
+    grid-column:1/-1;
 }
 
-.glass-list li:last-child {
-    border-bottom: none;
+.content-tree{
+    margin-top:16px;
 }
 
-.glass-list strong {
-    font-weight: 600;
+.content-section{
+    margin-bottom:20px;
 }
 
-.full-width {
-    grid-column: 1 / -1;
+.content-title{
+    display:inline-block;
+    padding:4px 12px;
+    border-radius:12px;
+    background:rgba(255,255,255,.5);
+    font-weight:600;
 }
 
-.content-tree {
-    margin-top: 15px;
-    font-size: 0.95rem;
-    line-height: 1.6;
+.indent-1{
+    padding-left:20px;
+    margin:8px 0;
+    border-left:2px solid rgba(0,0,0,.08);
 }
 
-.content-section {
-    margin-bottom: 20px;
+.indent-2{
+    padding-left:40px;
+    margin:4px 0;
 }
-
-.content-title {
-    font-weight: 600;
-    color: #1d1d1f;
-    margin-bottom: 8px;
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.5);
-    padding: 4px 12px;
-    border-radius: 12px;
-}
-
-.indent-1 { padding-left: 20px; border-left: 2px solid rgba(0,0,0,0.05); margin-bottom: 8px; }
-.indent-2 { padding-left: 40px; color: #515154; margin-bottom: 4px; }
