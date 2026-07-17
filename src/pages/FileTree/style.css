@@ -37,29 +37,49 @@
   margin-bottom: 24px;
 }
 
-/* Botão Voltar Glassmorphism */
+/* Botão Voltar Apple Glass (Refinado) */
 .glass-btn-back {
-  display: flex;
+  display: inline-flex; /* inline-flex evita distorções de largura */
   align-items: center;
-  gap: 4px;
-  padding: 8px 16px 8px 10px;
-  border-radius: 20px;
-  border: var(--glass-border);
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: #3b82f6; /* Azul Apple */
+  justify-content: center;
+  gap: 6px; /* Espaço menor e mais elegante entre ícone e texto */
+  padding: 8px 16px 8px 12px; /* Margens balanceadas */
+  border-radius: 99px; /* Cantos totalmente arredondados (pílula) */
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Borda de vidro mais visível */
+  
+  /* Fundo translúcido com leve branco para dar aspecto "fosco" */
+  background: rgba(255, 255, 255, 0.08); 
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  
+  color: #fff; /* Texto branco fica mais legível no vidro */
   font-family: inherit;
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1); /* Curva suave (Apple-like) */
+}
+
+/* O ícone herda o azul sutil do iOS */
+.glass-btn-back svg {
+  color: #3b82f6; 
+  transition: transform 0.25s ease;
 }
 
 .glass-btn-back:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: scale(0.97);
+  background: rgba(255, 255, 255, 0.15); /* Fica mais claro ao passar o mouse */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+}
+
+.glass-btn-back:hover svg {
+  transform: translateX(-2px); /* Ícone move levemente para a esquerda indicando "voltar" */
+}
+
+.glass-btn-back:active {
+  transform: scale(0.96); /* Efeito de pressão do iOS */
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .header-text h1 {
