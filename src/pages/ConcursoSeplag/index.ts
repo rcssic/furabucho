@@ -1,2 +1,1 @@
-export { default } from './Cargo2ExamPage';
-export { default as metadata } from "./metadata";
+export { default } from "./Cargo2ExamPage";
