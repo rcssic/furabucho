@@ -1,0 +1,99 @@
+.ttt-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    background:
+        radial-gradient(circle at top left, #5b7cff 0%, transparent 45%),
+        radial-gradient(circle at bottom right, #7c4dff 0%, transparent 40%),
+        #101522;
+    font-family:
+        Inter,
+        system-ui,
+        sans-serif;
+}
+
+.ttt-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 40px;
+    border-radius: 24px;
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,.12);
+    color: white;
+    box-shadow: 0 30px 60px rgba(0,0,0,.35);
+}
+
+.ttt-card h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.subtitle {
+    margin-top: 12px;
+    margin-bottom: 28px;
+    text-align: center;
+    opacity: .85;
+    font-size: .95rem;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 14px;
+}
+
+.cell {
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 18px;
+    background: rgba(255,255,255,.08);
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.cell:hover:not(:disabled) {
+    transform: translateY(-3px);
+    background: rgba(255,255,255,.16);
+}
+
+.cell:active {
+    transform: scale(.96);
+}
+
+.reset-button {
+    width: 100%;
+    margin-top: 28px;
+    border: none;
+    border-radius: 14px;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg,#4f7cff,#7b61ff);
+    transition: .2s;
+}
+
+.reset-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(79,124,255,.4);
+}
+
+@media (max-width: 600px) {
+
+    .ttt-card {
+        padding: 24px;
+    }
+
+    .cell {
+        font-size: 2.4rem;
+    }
+
+}
