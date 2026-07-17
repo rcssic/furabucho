@@ -75,20 +75,26 @@ export const FileTreePage: React.FC = () => {
             <h2>Prompt de Geração via IA</h2>
           </div>
           <p className="section-desc">
-            Copie o prompt abaixo e envie para a IA quando quiser criar uma nova página funcional.
+            Copie o prompt abaixo e preencha a seção de requisitos específicos antes de enviar para a IA.
           </p>
           <div className="prompt-block">
             <p>
               "Atue como um Engenheiro de Software Sênior especializado em React e TypeScript. Crie um novo módulo de página totalmente isolado para minha aplicação."
             </p>
             <p>
-              "Crie uma pasta em <strong>src/pages/[NomeDaPagina]/</strong> contendo os seguintes arquivos: <code>index.ts</code>, <code>[Nome]Page.tsx</code>, <code>style.css</code> e <code>metadata.tsx</code>."
+              "Crie os seguintes arquivos: <code>index.ts</code>, <code>[Nome]Page.tsx</code>, <code>style.css</code> e <code>metadata.tsx</code>."
             </p>
             <p>
               "O arquivo <strong>metadata.tsx</strong> deve exportar por padrão (export default) um objeto contendo: <code>id</code> (string), <code>title</code> (string), <code>description</code> (string), <code>icon</code> (um elemento SVG puro do React) e <code>keywords</code> (array de strings)."
             </p>
             <p>
               "A página deve ser completamente autossuficiente e ter um design moderno e profissional. Estilize a página utilizando apenas CSS puro no arquivo local <strong>style.css</strong>, sem depender de variáveis globais do meu projeto ou de bibliotecas de UI externas (como Material ou Tailwind)."
+            </p>
+            <p style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '20px', marginTop: '10px' }}>
+              <strong>--- REQUISITOS ESPECÍFICOS DA PÁGINA ---</strong><br/><br/>
+              <strong>Objetivo da Página:</strong> [Substitua aqui. Ex: Um Jogo da Velha interativo jogável no navegador]<br/><br/>
+              <strong>Estilo Visual (Design):</strong> [Substitua aqui. Ex: Design minimalista escuro com detalhes em neon azul e sombras suaves]<br/><br/>
+              <strong>Funcionalidades / Regras de Negócio:</strong> [Substitua aqui. Ex: Deve conter um placar de vitórias, exibir de quem é a vez, reconhecer empate e ter um botão de reiniciar a partida]
             </p>
           </div>
         </section>
