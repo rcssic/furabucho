@@ -108,7 +108,7 @@ export default function CbmAlSoldado2026Page() {
                     <div className="glass-card">
                         <h2>Estilo da Prova</h2>
                         <ul className="glass-data-list">
-                            <li><span>Formato dos Itens</span> <strong>CERTO ou ERRADO</strong></li>
+                            <li><span>Formato das Questões</span> <strong>CERTO ou ERRADO</strong></li>
                             <li><span>Penalidade</span> <strong>Marcação errada anula certa</strong></li>
                             <li><span>Duração da Prova</span> <strong>4 horas e 30 minutos</strong></li>
                             <li><span>Distribuição</span> <strong>50 Básicos + 70 Específicos</strong></li>
@@ -173,7 +173,7 @@ export default function CbmAlSoldado2026Page() {
                         {/* =========================================
                             CONHECIMENTOS GERAIS (BÁSICOS)
                         ========================================= */}
-                        <div className="area-badge">CONHECIMENTOS GERAIS (50 Itens)</div>
+                        <div className="area-badge">CONHECIMENTOS GERAIS (50 Questões)</div>
 
                         <SubjectAccordion title="LÍNGUA PORTUGUESA">
                             <div className="indent-level-1">1 Compreensão e interpretação de textos de gêneros variados.</div>
@@ -274,7 +274,7 @@ export default function CbmAlSoldado2026Page() {
                         {/* =========================================
                             CONHECIMENTOS ESPECÍFICOS
                         ========================================= */}
-                        <div className="area-badge" style={{ marginTop: '20px' }}>CONHECIMENTOS ESPECÍFICOS - CARGO 2 (70 Itens)</div>
+                        <div className="area-badge" style={{ marginTop: '20px' }}>CONHECIMENTOS ESPECÍFICOS - CARGO 2 (70 Questões)</div>
 
                         <SubjectAccordion title="FÍSICA">
                             <div className="indent-level-1">1 Vetores.</div>
