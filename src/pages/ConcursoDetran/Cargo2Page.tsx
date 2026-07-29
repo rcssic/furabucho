@@ -95,12 +95,12 @@ export default function DetranAlCargo22026Page() {
                     <div className="glass-card">
                         <h2>Datas Importantes</h2>
                         <ul className="glass-data-list">
-                            <li><span>Inscrições</span> <strong>06/05 a 09/06/2026</strong></li>
-                            <li><span>Pagamento da Taxa</span> <strong>Até 11/06/2026</strong></li>
-                            <li><span>Locais de Prova</span> <strong>21/07/2026</strong></li>
-                            <li><span>Data das Provas</span> <strong>02/08/2026 (Tarde)</strong></li>
-                            <li><span>Gabarito Preliminar</span> <strong>04/08 a 11/08/2026</strong></li>
-                            <li><span>Resultado (Objetiva)</span> <strong>09/09/2026</strong></li>
+                            <li><span>Inscrições</span> <strong>06/05 a 29/06/2026</strong></li>
+                            <li><span>Pagamento da Taxa</span> <strong>Até 01/07/2026</strong></li>
+                            <li><span>Locais de Prova</span> <strong>03/09/2026</strong></li>
+                            <li><span>Data das Provas</span> <strong>20/00/2026 (Tarde)</strong></li>
+                            <li><span>Gabarito Preliminar</span> <strong>22/09 a 29/09/2026</strong></li>
+                            <li><span>Resultado (Objetiva)</span> <strong>28/10/2026</strong></li>
                         </ul>
                     </div>
 
