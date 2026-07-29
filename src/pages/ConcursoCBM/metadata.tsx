@@ -6,11 +6,10 @@ export default {
     description: "Página com todas as informações do concurso CBM AL 2026 para o Cargo 2.",
     keywords: [
         "concurso",
-        "CBM",
+        "cbm",
         "alagoas",
-        "analista",
-        "sistemas",
-        "ti",
+        "bombeiro",
+        "sistemas"
         "edital"
     ],
     icon: (
