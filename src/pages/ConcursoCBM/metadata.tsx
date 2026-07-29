@@ -1,7 +1,7 @@
 import React from "react";
 
 export default {
-    id: "concurso-CMB",
+    id: "concurso-CBM",
     title: "Concurso CBM",
     description: "Página com todas as informações do concurso CBM AL 2026 para o Cargo 2.",
     keywords: [
