@@ -3,7 +3,7 @@ import React from "react";
 export default {
     id: "concurso-CMB",
     title: "Concurso CBM",
-    description: "Página com todas as informações do concurso SEPLAG AL 2026 para o Cargo 2 (Análise de Sistemas).",
+    description: "Página com todas as informações do concurso CBM AL 2026 para o Cargo 2.",
     keywords: [
         "concurso",
         "CBM",
