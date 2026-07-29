@@ -1,2 +1,2 @@
-export { default } from './Cargo2Page';
+export { default } from './cargo2';
 export { default as metadata } from "./metadata";
