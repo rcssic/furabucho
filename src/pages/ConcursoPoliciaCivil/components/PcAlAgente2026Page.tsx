@@ -48,7 +48,7 @@ interface Props {
     onBack: () => void;
 }
 
-export default function PcAlAgente2026Page({ onBack }: Props) {
+export function PcAlAgente2026Page({ onBack }: Props) {
     return (
         <div className="cargo-glass-wrapper">
             <div className="cargo-content-max">
