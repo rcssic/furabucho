@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { PcAlAgente2026Page } from './components/PcAlAgente2026Page';
-import { PcAlEscrivao2026Page } from './components/PcAlEscrivao2026Page';
 import './style.css';
 
 export default function PcAlHub() {
