@@ -1,12 +1,12 @@
 import React from "react";
 
 export default {
-    id: "concurso-seplag",
-    title: "Concurso Seplag",
-    description: "Página com todas as informações do concurso SEPLAG AL 2026 para o Cargo 2 (Análise de Sistemas).",
+    id: "concurso-detran",
+    title: "Concurso Detran",
+    description: "Página com todas as informações do concurso DETRAN AL 2026 para o Cargo 2 (Análise de Sistemas).",
     keywords: [
         "concurso",
-        "seplag",
+        "detran",
         "alagoas",
         "analista",
         "sistemas",
