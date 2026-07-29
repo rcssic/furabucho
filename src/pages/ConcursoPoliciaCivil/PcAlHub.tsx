@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import PcAlAgente2026Page from './PcAlAgente2026Page';
-import PcAlEscrivao2026Page from './PcAlEscrivao2026Page'; // Certifique-se que o nome do arquivo Escrivão está correto
+import PcAlAgente2026Page from './components/PcAlAgente2026Page';
+import PcAlEscrivao2026Page from './components/PcAlEscrivao2026Page';
 import './style.css';
 
 export default function PcAlHub() {
