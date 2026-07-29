@@ -1,40 +1,40 @@
 import React, { useState } from 'react';
 import PcAlAgente2026Page from './PcAlAgente2026Page';
-import PcAlEscrivao2026Page from './PcAlEscrivao2026Page';
+import PcAlEscrivao2026Page from './PcAlEscrivao2026Page'; // Certifique-se que o nome do arquivo Escrivão está correto
 import './style.css';
 
 export default function PcAlHub() {
     // Controla qual tela renderizar: 'selecao', 'agente' ou 'escrivao'
     const [telaAtiva, setTelaAtiva] = useState<'selecao' | 'agente' | 'escrivao'>('selecao');
 
-    // Se o estado for 'agente', renderiza a página do Agente
+    // Se o estado for 'agente', renderiza a página do Agente e passa a função de voltar
     if (telaAtiva === 'agente') {
         return <PcAlAgente2026Page onBack={() => setTelaAtiva('selecao')} />;
     }
 
-    // Se o estado for 'escrivao', renderiza a página do Escrivão
+    // Se o estado for 'escrivao', renderiza a página do Escrivão e passa a função de voltar
     if (telaAtiva === 'escrivao') {
         return <PcAlEscrivao2026Page onBack={() => setTelaAtiva('selecao')} />;
     }
 
-    // Tela padrão (Seleção)
+    // Tela padrão (Seleção com os quadrados)
     return (
         <div className="cargo-glass-wrapper">
             <div className="cargo-content-max">
                 
                 <header className="cargo-header">
-                    {/* Este botão voltar retorna para a Home real do sistema */}
                     <button className="glass-btn-pill" onClick={() => window.location.hash = '/'}>
                         <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none">
                             <polyline points="15 18 9 12 15 6"></polyline>
                         </svg>
-                        Voltar para o Início
+                        Voltar para Home
                     </button>
                     <h1>Seleção de Cargo</h1>
                     <p>Selecione abaixo o cargo desejado para acessar o edital.</p>
                 </header>
 
                 <div className="glass-grid">
+                    {/* QUADRADO: AGENTE */}
                     <div 
                         className="glass-card clickable-card" 
                         onClick={() => setTelaAtiva('agente')}
@@ -46,6 +46,7 @@ export default function PcAlHub() {
                         <p>Acessar informações completas, vagas e ementa para Agente.</p>
                     </div>
 
+                    {/* QUADRADO: ESCRIVÃO */}
                     <div 
                         className="glass-card clickable-card" 
                         onClick={() => setTelaAtiva('escrivao')}
