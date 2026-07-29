@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import './style.css'; // Estilo CSS com o design Glassmorphism e efeito visual dos acordeões
 
+interface Props {
+    onBack: () => void;
+}
 // Componente de Acordeão com efeito Glass
 const SubjectAccordion: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className={`glass-accordion ${isOpen ? 'open' : ''}`}>
-            <button className="glass-accordion-header" onClick={() => setIsOpen(!isOpen)}>
+        <div className={`glass-accordion ${isOpen ? 'onBack' : ''}`}>
+            <button className="glass-accordion-header" onClick={() => setIsOpen(!onBack)}>
                 <h3>{title}</h3>
                 <svg 
                     viewBox="0 0 24 24" 
