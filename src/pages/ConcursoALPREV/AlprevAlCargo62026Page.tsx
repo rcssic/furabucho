@@ -136,7 +136,7 @@ export default function AlprevAlCargo62026Page() {
                         {/* =========================================
                             CONHECIMENTOS GERAIS (BÁSICOS)
                         ========================================= */}
-                        <div className="area-badge">CONHECIMENTOS GERAIS (50 Itens)</div>
+                        <div className="area-badge">CONHECIMENTOS GERAIS (50 Questões)</div>
 
                         <SubjectAccordion title="LÍNGUA PORTUGUESA">
                             <div className="indent-level-1">1 Compreensão e interpretação de textos de gêneros variados.</div>
@@ -305,7 +305,7 @@ export default function AlprevAlCargo62026Page() {
                         {/* =========================================
                             CONHECIMENTOS ESPECÍFICOS
                         ========================================= */}
-                        <div className="area-badge" style={{ marginTop: '20px' }}>CONHECIMENTOS ESPECÍFICOS - CARGO 6 (70 Itens)</div>
+                        <div className="area-badge" style={{ marginTop: '20px' }}>CONHECIMENTOS ESPECÍFICOS - CARGO 6 (70 Questões)</div>
 
                         <SubjectAccordion title="TECNOLOGIA DA INFORMAÇÃO - I GESTÃO DE TI">
                             <div className="indent-level-1">1 Ciclo PDCA.</div>
