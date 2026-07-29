@@ -3,17 +3,17 @@ import React from "react";
 export default {
     id: "concurso-policia-civil",
     title: "Concurso Policia Civil",
-    description: "Página com todas as informações do concurso DETRAN AL 2026 para o Cargo 2 (Análise de Sistemas).",
+    description: "Página de seleção para os editais de Agente e Escrivão.",
     keywords: [
         "concurso",
-        "detran",
-        "alagoas",
-        "analista",
-        "sistemas",
-        "ti",
-        "edital"
+        "polícia",
+        "agente",
+        "escrivão",
+        "seleção"
     ],
     icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-siren-icon lucide-siren"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z"/><path d="M21 12h1"/><path d="M18.5 4.5 18 5"/><path d="M2 12h1"/><path d="M12 2v1"/><path d="m4.929 4.929.707.707"/><path d="M12 12v6"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
     ),
 };
