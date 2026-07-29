@@ -41,13 +41,17 @@ const SubjectAccordion: React.FC<{ title: string; children: React.ReactNode }> =
     );
 };
 
-export default function PcAlEscrivao2026Page() {
+interface Props {
+    onBack: () => void;
+}
+
+export default function PcAlEscrivao2026Page({ onBack }: Props) {
     return (
         <div className="cargo-glass-wrapper">
             <div className="cargo-content-max">
                 
                 <header className="cargo-header">
-                    <button className="glass-btn-pill" onClick={() => window.location.hash = '/'}>
+                    <button className="glass-btn-pill" onClick={onBack}>
                         <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none">
                             <polyline points="15 18 9 12 15 6"></polyline>
                         </svg>
