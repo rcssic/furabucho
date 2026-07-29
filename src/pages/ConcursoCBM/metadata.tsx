@@ -9,7 +9,7 @@ export default {
         "cbm",
         "alagoas",
         "bombeiro",
-        "sistemas"
+        "militar",
         "edital"
     ],
     icon: (
