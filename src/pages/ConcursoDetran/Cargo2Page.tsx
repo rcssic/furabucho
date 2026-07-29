@@ -126,7 +126,7 @@ export default function DetranAlCargo22026Page() {
                         {/* =========================================
                             CONHECIMENTOS BÁSICOS
                         ========================================= */}
-                        <div className="area-badge">CONHECIMENTOS BÁSICOS (50 Itens)</div>
+                        <div className="area-badge">CONHECIMENTOS BÁSICOS (50 Questões)</div>
 
                         <SubjectAccordion title="LÍNGUA PORTUGUESA">
                             <div className="indent-level-1">1 Compreensão e interpretação de textos de gêneros variados.</div>
@@ -261,7 +261,7 @@ export default function DetranAlCargo22026Page() {
                         {/* =========================================
                             CONHECIMENTOS ESPECÍFICOS
                         ========================================= */}
-                        <div className="area-badge" style={{ marginTop: '20px' }}>CONHECIMENTOS ESPECÍFICOS - CARGO 2 (70 Itens)</div>
+                        <div className="area-badge" style={{ marginTop: '20px' }}>CONHECIMENTOS ESPECÍFICOS - CARGO 2 (70 Questões)</div>
 
                         <SubjectAccordion title="LEGISLAÇÃO DE TRÂNSITO">
                             <div className="indent-level-1">1 Código de Trânsito Brasileiro (Lei nº 9.503/1997 e suas alterações).</div>
