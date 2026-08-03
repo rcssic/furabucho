@@ -204,8 +204,8 @@ export default function DetranAlCargo22026Page() {
                             <div className="indent-level-1">6 Organização administrativa: administração direta e indireta; centralizada e decentralizada; autarquias, fundações, empresas públicas, sociedades de economia mista, consórcios públicos (Lei nº 11.107/2005).</div>
                             <div className="indent-level-1">7 Órgãos públicos: conceito, natureza e classificação.</div>
                             <div className="indent-level-1">8 Servidores públicos: cargo, emprego e função públicos.</div>
-                            <div className="indent-level-1">9 CLT: empregado e empregador, anotações na CTPS, duração do trabalho, períodos de descanso, trabalho noturno, teletrabalho, férias anuais, dano extrapatrimonial, contrato individual do trabalho, remuneração e rescisão.</div>
-                            <div className="indent-level-1">10 Processo administrativo (Lei estadual nº 10.177/1998): artigos 1º ao 36.</div>
+                            <div className="indent-level-1">9 (Excluido) CLT: empregado e empregador, anotações na CTPS, duração do trabalho, períodos de descanso, trabalho noturno, teletrabalho, férias anuais, dano extrapatrimonial, contrato individual do trabalho, remuneração e rescisão.</div>
+                            <div className="indent-level-1">10 (Excluido) Processo administrativo (Lei estadual nº 10.177/1998): artigos 1º ao 36.</div>
                             <div className="indent-level-1">11 Controle e responsabilização da administração: controle administrativo; controle judicial; controle legislativo; responsabilidade civil do Estado.</div>
                             <div className="indent-level-1">12 Lei nº 8.429/1992: disposições gerais; atos de improbidade administrativa.</div>
                             <div className="indent-level-1">13 Licitações e contratos da administração pública: Lei nº 8.666/1993 e suas alterações.</div>
