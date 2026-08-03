@@ -277,7 +277,7 @@ export default function DetranAlCargo22026Page() {
                             <div className="indent-level-1">6 Criptografia e proteção de dados em trânsito e em repouso; sistemas criptográficos simétricos e assimétricos e principais protocolos.</div>
                             <div className="indent-level-1">7 Tecnologias de segurança: firewalls, sistemas de detecção e prevenção de intrusões, antivírus, antispam.</div>
                             <div className="indent-level-1">8 Assinatura e certificação digital.</div>
-                            <div className="indent-level-1">9 Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais) e suas alterações.</div>
+                            <div className="indent-level-1">9 (Incompleto no TecConcurso) Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais) e suas alterações.</div>
                         </SubjectAccordion>
 
                         <SubjectAccordion title="INFRAESTRUTURA EM TI">
