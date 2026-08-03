@@ -292,7 +292,7 @@ export default function AlprevAlCargo62026Page() {
                             <div className="indent-level-3">8.1.2 Decreto nº 11.531/2023 e Portaria Conjunta MGI/MF/CGU nº 33, de agosto de 2023.</div>
                         </SubjectAccordion>
 
-                        <SubjectAccordion title="LEGISLAÇÃO ESPECÍFICA">
+                        <SubjectAccordion title="LEGISLAÇÃO ESPECÍFICA (Não existe questão para esse conteúdo no TecConcurso)">
                             <div className="indent-level-1">1 Lei Complementar nº 70/2025 (Estabelece critérios técnicos e objetivos para a revisão da segregação de massa do RPPS AL).</div>
                             <div className="indent-level-1">2 Lei Complementar nº 65/2024 (Altera a Lei Complementar Estadual nº 52/2019, que reorganiza o RPPS AL).</div>
                             <div className="indent-level-1">3 Lei nº 8.759/2022 (dispõe sobre a instituição do fundo garantidor da Alagoas Previdência – FGAP/AL, e dá outras providências).</div>
