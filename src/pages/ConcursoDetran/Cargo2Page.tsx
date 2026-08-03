@@ -265,7 +265,7 @@ export default function DetranAlCargo22026Page() {
 
                         <SubjectAccordion title="LEGISLAÇÃO DE TRÂNSITO">
                             <div className="indent-level-1">1 Código de Trânsito Brasileiro (Lei nº 9.503/1997 e suas alterações).</div>
-                            <div className="indent-level-1">2 Resoluções do Conselho Nacional de Trânsito (CONTRAN): nº 30/1998, nº 32/1998, nº 56/1998, nº 108/1999, nº 110/2000, nº 300/2008, nº 351/2010, nº 558/2015, nº 623/2016, nº 634/2016, nº 712/2017, nº 715/2017, nº 723/2018, nº 780/2019, nº 789/2020, nº 809/2020, nº 849/2021, nº 870/2021, nº 871/2021, nº 886/2021, nº 897/2022, nº 926/2022, nº 929/2022, nº 932/2022 e nº 941/2022 e suas alterações.</div>
+                            <div className="indent-level-1">2 Resoluções do Conselho Nacional de Trânsito (CONTRAN): nº 30/1998, nº 32/1998, nº 56/1998, nº 108/1999, nº 110/2000, nº 300/2008, nº 351/2010, nº 558/2015, nº 623/2016, nº 634/2016, nº 712/2017, nº 715/2017, nº 723/2018, nº 780/2019, nº 789/2020, nº 809/2020, nº 849/2021, nº 870/2021, nº 871/2021, nº 886/2021, (N TecConcurso) nº 897/2022, nº 926/2022, nº 929/2022, nº 932/2022 e nº 941/2022 e suas alterações.</div>
                         </SubjectAccordion>
 
                         <SubjectAccordion title="SEGURANÇA DA INFORMAÇÃO">
