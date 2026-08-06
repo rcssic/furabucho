@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './style.css'; // Estilo compartilhado com o visual Glassmorphism
 
-// Componente de Acordeão com efeito Glassmorphism
 const SubjectAccordion: React.FC<{ title: string; children: React.ReactNode }> = ({ title, children }) => {
     const [isOpen, setIsOpen] = useState(false);
 
