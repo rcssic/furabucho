@@ -157,6 +157,30 @@
   text-align: right;
 }
 
+.food-assignments-list {
+  gap: 12px;
+}
+
+.food-assignment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.food-assignment strong {
+  color: #fff7d6;
+  font-weight: 600;
+  text-align: left;
+}
+
+.food-assignment span {
+  color: rgba(255, 244, 214, 0.72);
+  font-size: 0.9rem;
+}
+
 /* ACCORDION (Sanfona Premium) */
 .area-badge {
   background: rgba(255, 185, 102, 0.14);

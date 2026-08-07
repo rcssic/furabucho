@@ -92,18 +92,18 @@ export default function RobgolAniversarioPage() {
 
                     {/* Divisão dos Pratos (Estilo Quadro de Vagas/Provas do Concurso) */}
                     <div className="glass-card full">
-                        <h2>Distribuição de Pratos & Doces</h2>
-                        <ul className="glass-data-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px' }}>
-                            <li><span>Bolo e Doces</span> <strong>Dirlene e Delis</strong></li>
-                            <li><span>Lasanha Especial</span> <strong>Milena</strong></li>
-                            <li><span>Bobó de Camarão</span> <strong>Mary</strong></li>
-                            <li><span>Pãozinho de Festa</span> <strong>Magda</strong></li>
-                            <li><span>Prato de Entrada</span> <strong>Cinha <br/><small>(A definir)</small></strong></li>
-                            <li><span>Bolo Salgado / Torta</span> <strong>Terezinha <br/><small>(A definir)</small></strong></li>
-                            <li><span>Sobremesas Diversas</span> <strong>Dione <br/><small>(A definir)</small></strong></li>
-                            <li><span>Petiscos de Entrada</span> <strong>Marina <br/><small>(A definir)</small></strong></li>
-                            <li><span>Salgadinhos Fritos</span> <strong>Dayze <br/><small>(A definir)</small></strong></li>
-                            <li><span>Bebidas Alcoólicas</span> <strong>Nadia <br/><small>(A definir)</small></strong></li>
+                        <h2>Quem vai levar o quê</h2>
+                        <ul className="glass-data-list food-assignments-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px' }}>
+                            <li className="food-assignment"><strong>Dirlene e Delis</strong><span>Bolo e Doces</span></li>
+                            <li className="food-assignment"><strong>Milena</strong><span>Lasanha Especial</span></li>
+                            <li className="food-assignment"><strong>Mary</strong><span>Bobó de Camarão</span></li>
+                            <li className="food-assignment"><strong>Magda</strong><span>Pãozinho de Festa</span></li>
+                            <li className="food-assignment"><strong>Cinha <br/><small>(A definir)</small></strong><span>Prato de Entrada</span></li>
+                            <li className="food-assignment"><strong>Terezinha <br/><small>(A definir)</small></strong><span>Bolo Salgado / Torta</span></li>
+                            <li className="food-assignment"><strong>Dione <br/><small>(A definir)</small></strong><span>Sobremesas Diversas</span></li>
+                            <li className="food-assignment"><strong>Marina <br/><small>(A definir)</small></strong><span>Petiscos de Entrada</span></li>
+                            <li className="food-assignment"><strong>Dayze <br/><small>(A definir)</small></strong><span>Salgadinhos Fritos</span></li>
+                            <li className="food-assignment"><strong>Nadia <br/><small>(A definir)</small></strong><span>Bebidas Alcoólicas</span></li>
                         </ul>
                     </div>
 
