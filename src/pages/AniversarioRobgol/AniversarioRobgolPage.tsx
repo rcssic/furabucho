@@ -78,8 +78,10 @@ export default function RobgolAniversarioPage() {
                         <ul className="glass-data-list">
                             <li><span>Local</span> <strong>R$ 650,00</strong></li>
                             <li><span>Seresta</span> <strong>R$ 500,00</strong></li>
+                            <li><span>Plásticos</span> <strong>R$ 150,00</strong></li>
+                            <li><span>Mesa (10 conjuntos)</span> <strong>R$ 100,00</strong></li>
                             <li style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px', marginTop: '4px' }}>
-                                <span><strong>Gastos Totais</strong></span> <strong>R$ 1.150,00</strong>
+                                <span><strong>Gastos Totais</strong></span> <strong>R$ 1.400,00</strong>
                             </li>
                         </ul>
                     </div>
@@ -98,17 +100,24 @@ export default function RobgolAniversarioPage() {
 
                     {/* Divisão dos Pratos (Estilo Quadro de Vagas/Provas do Concurso) */}
                     <div className="glass-card full">
-                        <h2>Quem vai levar o quê</h2>
+                        <h2>Ajuda e Pratos</h2>
                         <ul className="glass-data-list food-assignments-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px' }}>
-                            <li className="food-assignment"><strong>Dirlene e Delis</strong><span>Bolo, doces e carne ao molho madeira</span></li>
+                            <li className="food-assignment"><strong>Cinha</strong><span>Ajuda financeira: R$ 150,00</span></li>
+                            <li className="food-assignment"><strong>Everton</strong><span>Ajuda financeira: R$ 150,00</span></li>
+                            <li className="food-assignment">
+                                <strong>Dirlene e Delis</strong>
+                                <span>Bolo, doces e carne ao molho madeira</span>
+                                <span>150 salgados e escondidinho de frango</span>
+                            </li>
                             <li className="food-assignment"><strong>Milena</strong><span>Lasanha</span></li>
                             <li className="food-assignment"><strong>Mary</strong><span>Bobó de camarão</span></li>
-                            <li className="food-assignment"><strong>Cinha</strong><span>R$ 150,00</span></li>
+                            <li className="food-assignment"><strong>Rute</strong><span>100 salgados</span></li>
                             <li className="food-assignment"><strong>Magda</strong><span>Pãozinho e caldinho</span></li>
                             <li className="food-assignment"><strong>Terezinha</strong><span>Feijoada</span></li>
-                            <li className="food-assignment"><strong>Dione</strong><span>200 salgados</span></li>
+                            <li className="food-assignment"><strong>Dione</strong><span>100 salgados</span></li>
                             <li className="food-assignment"><strong>Marina</strong><span>Salpicão</span></li>
                             <li className="food-assignment"><strong>Nadia</strong><span>Farofa e escondidinho</span></li>
+                            <li className="food-assignment"><strong>Gina</strong><span>2 kg de carne</span></li>
                         </ul>
                     </div>
 
