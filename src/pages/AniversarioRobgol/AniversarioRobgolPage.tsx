@@ -82,7 +82,7 @@ export default function RobgolAniversarioPage() {
                             <li><span>Feijoada</span> <strong>R$ 450,00</strong></li>
                             <li><span>Plásticos</span> <strong>R$ 150,00</strong></li>
                             <li><span>Mesa (10 conjuntos)</span> <strong>R$ 100,00</strong></li>
-                            <li style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px', marginTop: '4px' }}>
+                            <li className="total-row" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px', marginTop: '4px' }}>
                                 <span><strong>Gastos Totais</strong></span> <strong>R$ 1.850,00</strong>
                             </li>
                         </ul>
@@ -116,13 +116,17 @@ export default function RobgolAniversarioPage() {
 
                     {/* Divisão dos Pratos (Estilo Quadro de Vagas/Provas do Concurso) */}
                     <div className="glass-card full">
-                        <h2>Quem vai levar o que</h2>
+                        <h2>Contribuições de Pratos</h2>
                         <ul className="glass-data-list food-assignments-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px' }}>
                             <li className="food-assignment">
                                 <strong>Dirlene e Delis</strong>
-                                <span>Pratos: bolo, doces e carne ao molho madeira</span>
-                                <span>Salgados: 150 unidades</span>
-                                <span>Prato extra: escondidinho de frango</span>
+                                <ul style={{ margin: '8px 0 0', paddingLeft: '18px', listStyleType: 'disc' }}>
+                                    <li>Bolo</li>
+                                    <li>Doces</li>
+                                    <li>Carne ao molho madeira</li>
+                                    <li>150 salgados</li>
+                                    <li>Escondidinho de frango</li>
+                                </ul>
                             </li>
                             <li className="food-assignment"><strong>Milena</strong><span>Lasanha</span></li>
                             <li className="food-assignment"><strong>Mary</strong><span>Bobó de camarão</span></li>
