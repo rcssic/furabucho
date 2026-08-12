@@ -62,9 +62,10 @@ export default function RobgolAniversarioPage() {
                 <div className="glass-grid">
                     
                     {/* Resumo Geral (Estilo Informações do Concurso) */}
-                    <div className="glass-card">
+                    <div className="glass-card full">
                         <h2>Resumo Geral</h2>
                         <ul className="glass-data-list">
+                            <li><span>Local</span> <strong>Espaço Ideal</strong></li>
                             <li><span>Data do Evento</span> <strong>16/08</strong></li>
                             <li><span>Total de Convidados</span> <strong>99 Pessoas</strong></li>
                             <li><span>Adultos Cadastrados</span> <strong>78 Convidados</strong></li>
@@ -78,11 +79,22 @@ export default function RobgolAniversarioPage() {
                         <ul className="glass-data-list">
                             <li><span>Local</span> <strong>R$ 650,00</strong></li>
                             <li><span>Seresta</span> <strong>R$ 500,00</strong></li>
+                            <li><span>Feijoada</span> <strong>R$ 450,00</strong></li>
                             <li><span>Plásticos</span> <strong>R$ 150,00</strong></li>
                             <li><span>Mesa (10 conjuntos)</span> <strong>R$ 100,00</strong></li>
                             <li style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px', marginTop: '4px' }}>
-                                <span><strong>Gastos Totais</strong></span> <strong>R$ 1.400,00</strong>
+                                <span><strong>Gastos Totais</strong></span> <strong>R$ 1.850,00</strong>
                             </li>
+                        </ul>
+                    </div>
+
+                    <div className="glass-card">
+                        <h2>Valores Arrecadados</h2>
+                        <ul className="glass-data-list">
+                            <li><span>Juliete</span> <strong>R$ 1.000,00</strong></li>
+                            <li><span>Robinho</span> <strong>R$ 250,00</strong></li>
+                            <li><span>Cinha</span> <strong>R$ 150,00</strong></li>
+                            <li><span>Everton</span> <strong>R$ 150,00</strong></li>
                         </ul>
                     </div>
 
@@ -106,8 +118,9 @@ export default function RobgolAniversarioPage() {
                             <li className="food-assignment"><strong>Everton</strong><span>Ajuda financeira: R$ 150,00</span></li>
                             <li className="food-assignment">
                                 <strong>Dirlene e Delis</strong>
-                                <span>Bolo, doces e carne ao molho madeira</span>
-                                <span>150 salgados e escondidinho de frango</span>
+                                <span>Pratos: bolo, doces e carne ao molho madeira</span>
+                                <span>Salgados: 150 unidades</span>
+                                <span>Prato extra: escondidinho de frango</span>
                             </li>
                             <li className="food-assignment"><strong>Milena</strong><span>Lasanha</span></li>
                             <li className="food-assignment"><strong>Mary</strong><span>Bobó de camarão</span></li>
