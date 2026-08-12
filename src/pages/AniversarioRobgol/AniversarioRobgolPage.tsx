@@ -87,11 +87,11 @@ export default function RobgolAniversarioPage() {
                     <div className="glass-card full">
                         <h2>Pagamentos Já Realizados</h2>
                         <ul className="glass-data-list">
-                            <li><span>Espaço</span> <strong>R$ 625,00</strong></li>
+                            <li><span>Espaço</span> <strong>R$ 325,00</strong></li>
                             <li><span>Seresta</span> <strong>R$ 250,00</strong></li>
                             <li className="total-row">
                                 <span><strong>Total Pago</strong></span>
-                                <strong>R$ 875,00</strong>
+                                <strong>R$ 575,00</strong>
                             </li>
                         </ul>
                     </div>
@@ -100,16 +100,15 @@ export default function RobgolAniversarioPage() {
                     <div className="glass-card full">
                         <h2>Quem vai levar o quê</h2>
                         <ul className="glass-data-list food-assignments-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px' }}>
-                            <li className="food-assignment"><strong>Dirlene e Delis</strong><span>Bolo e Doces</span></li>
-                            <li className="food-assignment"><strong>Milena</strong><span>Lasanha Especial</span></li>
-                            <li className="food-assignment"><strong>Mary</strong><span>Bobó de Camarão</span></li>
-                            <li className="food-assignment"><strong>Magda</strong><span>Pãozinho de Festa</span></li>
-                            <li className="food-assignment"><strong>Cinha <br/><small>(A definir)</small></strong><span>Prato de Entrada</span></li>
-                            <li className="food-assignment"><strong>Terezinha <br/><small>(A definir)</small></strong><span>Bolo Salgado / Torta</span></li>
-                            <li className="food-assignment"><strong>Dione <br/><small>(A definir)</small></strong><span>Sobremesas Diversas</span></li>
-                            <li className="food-assignment"><strong>Marina <br/><small>(A definir)</small></strong><span>Petiscos de Entrada</span></li>
-                            <li className="food-assignment"><strong>Dayze <br/><small>(A definir)</small></strong><span>Salgadinhos Fritos</span></li>
-                            <li className="food-assignment"><strong>Nadia <br/><small>(A definir)</small></strong><span>Bebidas Alcoólicas</span></li>
+                            <li className="food-assignment"><strong>Dirlene e Delis</strong><span>Bolo, doces e carne ao molho madeira</span></li>
+                            <li className="food-assignment"><strong>Milena</strong><span>Lasanha</span></li>
+                            <li className="food-assignment"><strong>Mary</strong><span>Bobó de camarão</span></li>
+                            <li className="food-assignment"><strong>Cinha</strong><span>R$ 150,00</span></li>
+                            <li className="food-assignment"><strong>Magda</strong><span>Pãozinho e caldinho</span></li>
+                            <li className="food-assignment"><strong>Terezinha</strong><span>Feijoada</span></li>
+                            <li className="food-assignment"><strong>Dione</strong><span>200 salgados</span></li>
+                            <li className="food-assignment"><strong>Marina</strong><span>Salpicão</span></li>
+                            <li className="food-assignment"><strong>Nadia</strong><span>Farofa e escondidinho</span></li>
                         </ul>
                     </div>
 
