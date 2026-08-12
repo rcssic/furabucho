@@ -95,6 +95,10 @@ export default function RobgolAniversarioPage() {
                             <li><span>Robinho</span> <strong>R$ 250,00</strong></li>
                             <li><span>Cinha</span> <strong>R$ 150,00</strong></li>
                             <li><span>Everton</span> <strong>R$ 150,00</strong></li>
+                            <li className="total-row">
+                                <span><strong>Total Arrecadado</strong></span>
+                                <strong>R$ 1.550,00</strong>
+                            </li>
                         </ul>
                     </div>
 
@@ -112,10 +116,8 @@ export default function RobgolAniversarioPage() {
 
                     {/* Divisão dos Pratos (Estilo Quadro de Vagas/Provas do Concurso) */}
                     <div className="glass-card full">
-                        <h2>Ajuda e Pratos</h2>
+                        <h2>Quem vai levar o que</h2>
                         <ul className="glass-data-list food-assignments-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '15px' }}>
-                            <li className="food-assignment"><strong>Cinha</strong><span>Ajuda financeira: R$ 150,00</span></li>
-                            <li className="food-assignment"><strong>Everton</strong><span>Ajuda financeira: R$ 150,00</span></li>
                             <li className="food-assignment">
                                 <strong>Dirlene e Delis</strong>
                                 <span>Pratos: bolo, doces e carne ao molho madeira</span>
