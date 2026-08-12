@@ -153,6 +153,17 @@
   text-align: right;
 }
 
+.total-row {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 12px;
+  margin-top: 4px;
+}
+
+.total-row strong {
+  color: #93c5fd;
+  font-weight: 700;
+}
+
 .food-assignments-list {
   gap: 12px;
 }

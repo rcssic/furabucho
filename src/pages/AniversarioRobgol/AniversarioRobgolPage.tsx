@@ -76,16 +76,22 @@ export default function RobgolAniversarioPage() {
                     <div className="glass-card">
                         <h2>Planejamento Financeiro</h2>
                         <ul className="glass-data-list">
-                            <li><span>Local</span> <strong>R$ 400,00 - R$ 500,00</strong></li>
-                            <li><span>Cadeiras e Mesas</span> <strong>R$ 200,00 <br/><small>(20 conjuntos x R$ 10,00)</small></strong></li>
-                            <li><span>Decoração</span> <strong>Da Casa</strong></li>
-                            <li><span>Seresta</span> <strong>Som da Casa</strong></li>
-                            <li><span>Refrigerantes</span> <strong>R$ 270,00 <br/><small>(30 unidades)</small></strong></li>
-                            <li><span>Frutas para suco</span> <strong>R$ 70,00</strong></li>
-                            <li><span>Churrasco</span> <strong>R$ 280,00</strong></li>
-                            <li><span>Plásticos e descartáveis</span> <strong>R$ 150,00</strong></li>
+                            <li><span>Local</span> <strong>R$ 650,00</strong></li>
+                            <li><span>Seresta</span> <strong>R$ 500,00</strong></li>
                             <li style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px', marginTop: '4px' }}>
-                                <span><strong>Gastos Totais (Aprox.)</strong></span> <strong>R$ 1.470,00</strong>
+                                <span><strong>Gastos Totais</strong></span> <strong>R$ 1.150,00</strong>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="glass-card full">
+                        <h2>Pagamentos Já Realizados</h2>
+                        <ul className="glass-data-list">
+                            <li><span>Espaço</span> <strong>R$ 625,00</strong></li>
+                            <li><span>Seresta</span> <strong>R$ 250,00</strong></li>
+                            <li className="total-row">
+                                <span><strong>Total Pago</strong></span>
+                                <strong>R$ 875,00</strong>
                             </li>
                         </ul>
                     </div>
