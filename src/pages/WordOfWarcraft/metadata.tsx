@@ -2,7 +2,7 @@ import React from 'react';
 
 export default {
     id: 'healer-dps',
-    title: 'Word of Warcraft',
+    title: 'World of Warcraft',
     description: 'Página inicial com seleção entre os perfis Healer e DPS.',
     keywords: ['world of warcraft', 'healer', 'dps', 'build', 'seleção'],
     icon: (

@@ -115,7 +115,7 @@ export function HealerPage({ onBack }: Props) {
                         </svg>
                         Voltar
                     </button>
-                    <h1>Word of Warcraft - Healer</h1>
+                    <h1>World of Warcraft - Healer</h1>
                     <p>Setup completo de addons e codigos do perfil, prontos para copiar e importar.</p>
                 </header>
 

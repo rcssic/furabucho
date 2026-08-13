@@ -48,7 +48,7 @@ export default function HealerDpsHubPage() {
                         </svg>
                         Voltar para Home
                     </button>
-                    <h1>Word of Warcraft</h1>
+                    <h1>World of Warcraft</h1>
                     <p>Escolha abaixo qual página deseja acessar.</p>
                 </header>
 
