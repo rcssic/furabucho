@@ -140,6 +140,17 @@ export default function RobgolAniversarioPage() {
                         </ul>
                     </div>
 
+                    <div className="glass-card full">
+                        <h2>Lista de Compra de Plásticos</h2>
+                        <ul className="glass-data-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '12px' }}>
+                            <li className="food-assignment"><strong>150 pratos</strong><span>para almoço e comidas da mesa</span></li>
+                            <li className="food-assignment"><strong>150 colheres</strong><span>para servir e consumo</span></li>
+                            <li className="food-assignment"><strong>150 garfos</strong><span>para servir e consumo</span></li>
+                            <li className="food-assignment"><strong>150 facas</strong><span>para servir e consumo</span></li>
+                            <li className="food-assignment"><strong>300 copos</strong><span>de 200 ml ou mais</span></li>
+                        </ul>
+                    </div>
+
                     <div className="glass-section-title">
                         <h2>Lista Oficial de Convidados (Por Núcleo Familiar)</h2>
                         <p>Clique em cada bloco familiar para visualizar os nomes dos adultos e das crianças presentes.</p>
@@ -293,16 +304,18 @@ export default function RobgolAniversarioPage() {
                             <div className="indent-level-2">3. Irmão</div>
                         </SubjectAccordion>
 
-                        <SubjectAccordion title="13. FAMÍLIA NAMORADA DO RONALDO (3 Adultos | 0 Crianças)">
+                        <SubjectAccordion title="13. FAMÍLIA NAMORADA DO RONALDO (4 Adultos | 0 Crianças)">
                             <div className="indent-level-1"><strong>Adultos:</strong></div>
                             <div className="indent-level-2">1. Mãe</div>
                             <div className="indent-level-2">2. Irmã 1</div>
                             <div className="indent-level-2">3. Irmã 2</div>
+                            <div className="indent-level-2">4. Cicero</div>
                         </SubjectAccordion>
 
-                        <SubjectAccordion title="14. FAMÍLIA AMIGA JOELMA (1 Adulto | 1 Criança)">
+                        <SubjectAccordion title="14. FAMÍLIA AMIGA JOELMA (2 Adultos | 1 Criança)">
                             <div className="indent-level-1"><strong>Adultos:</strong></div>
                             <div className="indent-level-2">1. Joelma</div>
+                            <div className="indent-level-2">2. Fausto</div>
                             <div className="indent-level-1" style={{ marginTop: '12px' }}><strong>Crianças:</strong></div>
                             <div className="indent-level-2">1. Clara</div>
                         </SubjectAccordion>
