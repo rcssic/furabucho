@@ -87,13 +87,11 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
                                 </div>
                             </div>
 
-                            <div className="musculacao-meta-row">
+                            <div className="musculacao-meta-row single-stat-row">
                                 <div className="musculacao-meta-pill">
-                                    <span>Séries</span>
                                     <strong>{exercise.series}</strong>
                                 </div>
                                 <div className="musculacao-meta-pill highlight">
-                                    <span>Repetições</span>
                                     <strong>{exercise.repRange}</strong>
                                 </div>
                             </div>
