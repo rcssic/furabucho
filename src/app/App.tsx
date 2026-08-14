@@ -21,9 +21,35 @@ export const App: React.FC = () => {
           // Normaliza o ID para fazer a busca independente da nomenclatura da pasta
           const normalizedId = page.id.replace(/-/g, '').toLowerCase();
           
-          const modulePath = Object.keys(pageModules).find(path => 
-            path.toLowerCase().includes(normalizedId)
-          );
+          const modulePath = Object.keys(pageModules)
+            .filter(path => {
+              const lowerPath = path.toLowerCase();
+              const fileName = lowerPath.split('/').at(-1) ?? '';
+              const baseName = fileName.replace(/\.(ts|tsx)$/, '');
+              const folderName = lowerPath.split('/').slice(-2, -1)[0] ?? '';
+
+              return (
+                baseName.includes(normalizedId) ||
+                folderName.includes(normalizedId) ||
+                lowerPath.includes(`/${normalizedId}/`)
+              );
+            })
+            .sort((a, b) => {
+              const score = (path: string) => {
+                const lowerPath = path.toLowerCase();
+                const fileName = lowerPath.split('/').at(-1) ?? '';
+                const baseName = fileName.replace(/\.(ts|tsx)$/, '');
+
+                let total = 0;
+                if (baseName.includes(`${normalizedId}hubpage`)) total += 100;
+                if (baseName.includes(`${normalizedId}page`)) total += 90;
+                if (baseName.includes(normalizedId)) total += 80;
+                if (lowerPath.includes(`/${normalizedId}/`)) total += 10;
+                return total;
+              };
+
+              return score(b) - score(a);
+            })[0];
 
           if (!modulePath) {
             console.warn(`Arquivo não encontrado para a página: ${page.title}`);

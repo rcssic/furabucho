@@ -11,7 +11,7 @@ interface PageProps {
     onBack: () => void;
 }
 
-function MilenaPage({ onBack }: PageProps) {
+function MilenaPage({ onBack, onSelectTreino }: PageProps & { onSelectTreino: (treino: 'a' | 'b' | 'c') => void }) {
     return (
         <div className="cargo-glass-wrapper musculacao-page">
             <div className="cargo-content-max">
@@ -27,7 +27,7 @@ function MilenaPage({ onBack }: PageProps) {
                 </header>
 
                 <div className="musculacao-selection-grid">
-                    <div className="glass-card clickable-card" onClick={() => (window.location.hash = '#/musculacao') }>
+                    <div className="glass-card clickable-card" onClick={() => onSelectTreino('a')}>
                         <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" strokeWidth="1.5" fill="none">
                             <path d="M7 7h3v10H7zM14 7h3v10h-3zM10 10h4v4h-4z" />
                         </svg>
@@ -35,7 +35,7 @@ function MilenaPage({ onBack }: PageProps) {
                         <p>Inferiores.</p>
                     </div>
 
-                    <div className="glass-card clickable-card" onClick={() => (window.location.hash = '#/musculacao')}>
+                    <div className="glass-card clickable-card" onClick={() => onSelectTreino('b')}>
                         <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" strokeWidth="1.5" fill="none">
                             <path d="M6 12h12M9 8l-3 4 3 4M15 8l3 4-3 4" />
                         </svg>
@@ -43,7 +43,7 @@ function MilenaPage({ onBack }: PageProps) {
                         <p>Superiores: costas e bíceps.</p>
                     </div>
 
-                    <div className="glass-card clickable-card" onClick={() => (window.location.hash = '#/musculacao')}>
+                    <div className="glass-card clickable-card" onClick={() => onSelectTreino('c')}>
                         <svg viewBox="0 0 24 24" width="48" height="48" stroke="currentColor" strokeWidth="1.5" fill="none">
                             <path d="M12 3v18M5 8h14M5 16h14" />
                         </svg>
@@ -83,7 +83,12 @@ export default function MusculacaoHubPage() {
     const [telaAtiva, setTelaAtiva] = useState<TelaAtiva>('selecao');
 
     if (telaAtiva === 'milena') {
-        return <MilenaPage onBack={() => setTelaAtiva('selecao')} />;
+        return (
+            <MilenaPage
+                onBack={() => setTelaAtiva('selecao')}
+                onSelectTreino={(treino) => setTelaAtiva(`milena-${treino}` as TelaAtiva)}
+            />
+        );
     }
 
     if (telaAtiva === 'milena-a') {
