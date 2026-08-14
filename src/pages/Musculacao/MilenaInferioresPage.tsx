@@ -20,13 +20,13 @@ interface ExerciseDbItem {
 }
 
 const EXERCISES: ExerciseSpec[] = [
-    { name: 'Leg Press', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Quadríceps, glúteos e panturrilhas', muscle: 'quads', aliases: ['prensa de piernas', 'maquina', 'press piernas'] },
-    { name: 'Elevação pélvica', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Glúteos, isquiotibiais e core', muscle: 'glutes', aliases: ['elevacion de cadera', 'hip thrust', 'elevación de cadera'] },
-    { name: 'Coice na polia', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Glúteos, posterior da coxa e core', muscle: 'glutes', aliases: ['kick out', 'polea', 'coice'] },
-    { name: 'Cadeira abdutora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Músculos glúteos médios e laterais', muscle: 'glutes', aliases: ['abductora', 'abductors', 'abducción'] },
-    { name: 'Cadeira adutora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Adutores da coxa e glúteos', muscle: 'glutes', aliases: ['aductora', 'adductors', 'aductor'] },
-    { name: 'Cadeira extensora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Quadríceps e joelho', muscle: 'quads', aliases: ['extensión de cuádriceps', 'extensor', 'cuadriceps'] },
-    { name: 'Cadeira flexora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Isquiotibiais e panturrilhas', muscle: 'hamstrings', aliases: ['curl femoral', 'flexora', 'isquiotibiales'] },
+    { name: 'Leg Press', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Quadríceps, glúteos e panturrilhas', muscle: 'quads', aliases: ['45-degree leg press', 'leg press machine'] },
+    { name: 'Elevação pélvica', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Glúteos, isquiotibiais e core', muscle: 'glutes', aliases: ['machine hip thrust', 'hip thrust machine'] },
+    { name: 'Coice na polia', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Glúteos, posterior da coxa e core', muscle: 'glutes', aliases: ['glute kickback', 'kick back'] },
+    { name: 'Cadeira abdutora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Músculos glúteos médios e laterais', muscle: 'glutes', aliases: ['outer thigh machine', 'hip abductor machine'] },
+    { name: 'Cadeira adutora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Adutores da coxa e glúteos', muscle: 'glutes', aliases: ['inner thigh machine', 'hip adductor machine'] },
+    { name: 'Cadeira extensora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Quadríceps e joelho', muscle: 'quads', aliases: ['leg extension machine'] },
+    { name: 'Cadeira flexora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Isquiotibiais e panturrilhas', muscle: 'hamstrings', aliases: ['seated leg curl machine'] },
 ];
 
 const STATIC_API_BASE = 'https://cdn.jsdelivr.net/gh/JahelCuadrado/ExerciseGymGifsDB@v1.1.0';
