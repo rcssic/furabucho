@@ -152,7 +152,7 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .musculacao-exercise-header h2 {
@@ -161,28 +161,40 @@
   font-size: 1.08rem;
 }
 
-.musculacao-set-badge {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 2px;
-  padding: 8px 10px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(124, 92, 255, 0.18), rgba(56, 189, 248, 0.12));
-  border: 1px solid rgba(168, 145, 255, 0.4);
-  min-width: 110px;
+.musculacao-meta-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
 }
 
-.musculacao-set-badge span {
+.musculacao-meta-pill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.16), rgba(24, 23, 45, 0.88));
+  border: 1px solid rgba(168, 145, 255, 0.34);
+}
+
+.musculacao-meta-pill span {
   color: var(--musculacao-muted);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
-.musculacao-set-badge strong {
+.musculacao-meta-pill strong {
   color: var(--musculacao-text);
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.musculacao-meta-pill.highlight {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.16), rgba(124, 92, 255, 0.22));
+  border-color: rgba(96, 165, 250, 0.4);
 }
 
 .musculacao-media-grid {
