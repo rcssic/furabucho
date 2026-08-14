@@ -16,7 +16,7 @@ const EXERCISES: ExerciseSpec[] = [
         series: '3 séries',
         repRange: '8 a 12 repetições',
         primaryMuscles: 'Quadríceps, glúteos e panturrilhas',
-        gifUrl: `${STATIC_API_BASE}/quads/sled-45-degrees-one-leg-press.gif`,
+        gifUrl: `${STATIC_API_BASE}/quads/lever-alternate-leg-press.gif`,
     },
     {
         name: 'Elevação pélvica',
@@ -37,14 +37,14 @@ const EXERCISES: ExerciseSpec[] = [
         series: '3 séries',
         repRange: '8 a 12 repetições',
         primaryMuscles: 'Músculos glúteos médios e laterais',
-        gifUrl: `${STATIC_API_BASE}/glutes/lever-seated-hip-abduction.gif`,
+        gifUrl: `${STATIC_API_BASE}/glutes/barbell-glute-bridge.gif`,
     },
     {
         name: 'Cadeira adutora',
         series: '3 séries',
         repRange: '8 a 12 repetições',
         primaryMuscles: 'Adutores da coxa e glúteos',
-        gifUrl: `${STATIC_API_BASE}/glutes/lever-seated-hip-adduction.gif`,
+        gifUrl: `${STATIC_API_BASE}/glutes/bench-hip-extension.gif`,
     },
     {
         name: 'Cadeira extensora',
