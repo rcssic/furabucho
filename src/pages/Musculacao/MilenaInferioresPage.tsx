@@ -130,23 +130,8 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
                         Voltar
                     </button>
                     <h1>Milena - Treino A</h1>
-                    <p>Inferiores: lista de exercícios com GIF e referência visual dos músculos ativos.</p>
+                    <p>Treino focado em quadríceps, glúteos e posterior da coxa, com ênfase em força, estabilidade e controle dos movimentos das pernas.</p>
                 </header>
-
-                <section className="musculacao-summary">
-                    <div className="musculacao-summary-card">
-                        <p>Treino</p>
-                        <strong>A</strong>
-                    </div>
-                    <div className="musculacao-summary-card">
-                        <p>Região</p>
-                        <strong>Inferiores</strong>
-                    </div>
-                    <div className="musculacao-summary-card">
-                        <p>Status</p>
-                        <strong>{loading ? 'Carregando' : 'Pronto'}</strong>
-                    </div>
-                </section>
 
                 <div className="musculacao-exercise-grid">
                     {exercises.map((exercise) => (
@@ -159,8 +144,7 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
                             </div>
 
                             <div className="musculacao-media-grid single-gif-grid">
-                                <div className="musculacao-media-box">
-                                    <p>GIF do exercício</p>
+                                <div className="musculacao-media-box single-gif-box">
                                     {exercise.gifUrl ? (
                                         <img src={exercise.gifUrl} alt={`${exercise.name} em execução`} />
                                     ) : (
