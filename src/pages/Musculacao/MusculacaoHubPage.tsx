@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import '../ConcursoPoliciaCivil/style.css';
 import './style.css';
+import { MilenaInferioresPage } from './MilenaInferioresPage';
+import { MilenaCostasBicepsPage } from './MilenaCostasBicepsPage';
+import { MilenaOmbroPeitoAbdomenPage } from './MilenaOmbroPeitoAbdomenPage';
 
 type TelaAtiva = 'selecao' | 'milena' | 'ronaldo' | 'milena-a' | 'milena-b' | 'milena-c';
 
@@ -199,15 +202,15 @@ export default function MusculacaoHubPage() {
     }
 
     if (telaAtiva === 'milena-a') {
-        return <MilenaTreinoPage treino="A" onBack={() => setTelaAtiva('milena')} />;
+        return <MilenaInferioresPage onBack={() => setTelaAtiva('milena')} />;
     }
 
     if (telaAtiva === 'milena-b') {
-        return <MilenaTreinoPage treino="B" onBack={() => setTelaAtiva('milena')} />;
+        return <MilenaCostasBicepsPage onBack={() => setTelaAtiva('milena')} />;
     }
 
     if (telaAtiva === 'milena-c') {
-        return <MilenaTreinoPage treino="C" onBack={() => setTelaAtiva('milena')} />;
+        return <MilenaOmbroPeitoAbdomenPage onBack={() => setTelaAtiva('milena')} />;
     }
 
     if (telaAtiva === 'ronaldo') {
