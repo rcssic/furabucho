@@ -80,10 +80,11 @@ export default function RobgolAniversarioPage() {
                             <li><span>Local</span> <strong>R$ 650,00</strong></li>
                             <li><span>Seresta</span> <strong>R$ 500,00</strong></li>
                             <li><span>Feijoada</span> <strong>R$ 450,00</strong></li>
-                            <li><span>Plásticos</span> <strong>R$ 150,00</strong></li>
-                            <li><span>Mesa (10 conjuntos)</span> <strong>R$ 100,00</strong></li>
+                            <li><span>Plásticos</span> <strong>R$ 256,14</strong></li>
+                            <li><span>Mesa (15 conjuntos)</span> <strong>R$ 150,00</strong></li>
+                            <li><span>Lençóis de mesa (25 unidades)</span> <strong>R$ 75,00</strong></li>
                             <li className="total-row" style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px', marginTop: '4px' }}>
-                                <span><strong>Gastos Totais</strong></span> <strong>R$ 1.850,00</strong>
+                                <span><strong>Gastos Totais</strong></span> <strong>R$ 2.081,14</strong>
                             </li>
                         </ul>
                     </div>
@@ -95,9 +96,10 @@ export default function RobgolAniversarioPage() {
                             <li><span>Robinho</span> <strong>R$ 250,00</strong></li>
                             <li><span>Cinha</span> <strong>R$ 150,00</strong></li>
                             <li><span>Everton</span> <strong>R$ 150,00</strong></li>
+                            <li><span>Edjunior</span> <strong>R$ 100,00</strong></li>
                             <li className="total-row">
                                 <span><strong>Total Arrecadado</strong></span>
-                                <strong>R$ 1.550,00</strong>
+                                <strong>R$ 1.650,00</strong>
                             </li>
                         </ul>
                     </div>
@@ -107,9 +109,11 @@ export default function RobgolAniversarioPage() {
                         <ul className="glass-data-list">
                             <li><span>Espaço</span> <strong>R$ 325,00</strong></li>
                             <li><span>Seresta</span> <strong>R$ 250,00</strong></li>
+                            <li><span>Mesas e lençóis</span> <strong>R$ 112,50</strong></li>
+                            <li><span>Plásticos (cartão do Ronaldo)</span> <strong>R$ 256,14</strong></li>
                             <li className="total-row">
                                 <span><strong>Total Pago</strong></span>
-                                <strong>R$ 575,00</strong>
+                                <strong>R$ 943,64</strong>
                             </li>
                         </ul>
                     </div>
@@ -143,11 +147,12 @@ export default function RobgolAniversarioPage() {
                     <div className="glass-card full">
                         <h2>Lista de Compra de Plásticos</h2>
                         <ul className="glass-data-list" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '12px' }}>
-                            <li className="food-assignment"><strong>150 pratos</strong><span>para almoço e comidas da mesa</span></li>
-                            <li className="food-assignment"><strong>150 colheres</strong><span>para servir e consumo</span></li>
+                            <li className="food-assignment"><strong>300 copos</strong><span>para bebidas em geral</span></li>
                             <li className="food-assignment"><strong>150 garfos</strong><span>para servir e consumo</span></li>
                             <li className="food-assignment"><strong>150 facas</strong><span>para servir e consumo</span></li>
-                            <li className="food-assignment"><strong>300 copos</strong><span>de 200 ml ou mais</span></li>
+                            <li className="food-assignment"><strong>50 colheres</strong><span>para servir e consumo</span></li>
+                            <li className="food-assignment"><strong>150 pratos de bolo</strong><span>para bolo e doces</span></li>
+                            <li className="food-assignment"><strong>150 colheres para bobó, caldinho e sopas</strong><span>uso em porções e caldos</span></li>
                         </ul>
                     </div>
 
