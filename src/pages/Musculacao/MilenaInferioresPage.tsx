@@ -13,50 +13,50 @@ const STATIC_API_BASE = 'https://cdn.jsdelivr.net/gh/JahelCuadrado/ExerciseGymGi
 const EXERCISES: ExerciseSpec[] = [
     {
         name: 'Leg Press',
-        series: '3 séries',
-        repRange: '8 a 12 repetições',
+        series: '3',
+        repRange: '8 a 12',
         primaryMuscles: 'Quadríceps, glúteos e panturrilhas',
         gifUrl: `${STATIC_API_BASE}/glutes/sled-45-leg-press.gif`,
     },
     {
         name: 'Elevação pélvica',
-        series: '3 séries',
-        repRange: '8 a 12 repetições',
+        series: '3',
+        repRange: '8 a 12',
         primaryMuscles: 'Glúteos, isquiotibiais e core',
         gifUrl: `${STATIC_API_BASE}/glutes/barbell-glute-bridge.gif`,
     },
     {
         name: 'Coice na polia',
-        series: '3 séries',
-        repRange: '8 a 12 repetições',
+        series: '3',
+        repRange: '8 a 12',
         primaryMuscles: 'Glúteos, posterior da coxa e core',
         gifUrl: `${STATIC_API_BASE}/glutes/cable-standing-hip-extension.gif`,
     },
     {
         name: 'Cadeira abdutora',
-        series: '3 séries',
-        repRange: '8 a 12 repetições',
+        series: '3',
+        repRange: '8 a 12',
         primaryMuscles: 'Músculos glúteos médios e laterais',
         gifUrl: `${STATIC_API_BASE}/abductors/lever-seated-hip-abduction.gif`,
     },
     {
         name: 'Cadeira adutora',
-        series: '3 séries',
-        repRange: '8 a 12 repetições',
+        series: '3',
+        repRange: '8 a 12',
         primaryMuscles: 'Adutores da coxa e glúteos',
         gifUrl: `${STATIC_API_BASE}/adductors/lever-seated-hip-adduction.gif`,
     },
     {
         name: 'Cadeira extensora',
-        series: '3 séries',
-        repRange: '8 a 12 repetições',
+        series: '3',
+        repRange: '8 a 12',
         primaryMuscles: 'Quadríceps e joelho',
         gifUrl: `${STATIC_API_BASE}/quads/lever-leg-extension.gif`,
     },
     {
         name: 'Cadeira flexora',
-        series: '3 séries',
-        repRange: '8 a 12 repetições',
+        series: '3',
+        repRange: '8 a 12',
         primaryMuscles: 'Isquiotibiais e panturrilhas',
         gifUrl: `${STATIC_API_BASE}/hamstrings/lever-seated-leg-curl.gif`,
     },
@@ -87,19 +87,17 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
                                 </div>
                             </div>
 
-                            <div className="musculacao-meta-row">
-                                <div className="musculacao-meta-pill">
-                                    <span>Séries</span>
+                            <div className="musculacao-meta-row compact-meta-row">
+                                <div className="musculacao-meta-pill compact-pill">
                                     <strong>{exercise.series}</strong>
                                 </div>
-                                <div className="musculacao-meta-pill highlight">
-                                    <span>Repetições</span>
+                                <div className="musculacao-meta-pill compact-pill highlight">
                                     <strong>{exercise.repRange}</strong>
                                 </div>
                             </div>
 
-                            <div className="musculacao-media-grid single-gif-grid">
-                                <div className="musculacao-media-box single-gif-box">
+                            <div className="musculacao-media-grid single-gif-grid compact-gif-grid">
+                                <div className="musculacao-media-box single-gif-box compact-gif-box">
                                     {exercise.gifUrl ? (
                                         <img src={exercise.gifUrl} alt={`${exercise.name} em execução`} />
                                     ) : (
@@ -107,13 +105,6 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
                                             <span>GIF indisponível</span>
                                         </div>
                                     )}
-                                </div>
-                            </div>
-
-                            <div className="musculacao-info-list">
-                                <div>
-                                    <label>Foco principal:</label>
-                                    <strong>{exercise.primaryMuscles}</strong>
                                 </div>
                             </div>
                         </article>

@@ -135,15 +135,15 @@
 
 .musculacao-exercise-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
 }
 
 .musculacao-exercise-card {
   background: linear-gradient(160deg, rgba(27, 24, 52, 0.88), rgba(18, 17, 31, 0.88));
   border: 1px solid rgba(168, 145, 255, 0.35);
-  border-radius: 18px;
-  padding: 18px;
+  border-radius: 16px;
+  padding: 14px;
   box-shadow: 0 18px 36px rgba(9, 8, 17, 0.35);
 }
 
@@ -151,45 +151,48 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 14px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .musculacao-exercise-header h2 {
   margin: 0;
   color: var(--musculacao-text);
-  font-size: 1.08rem;
+  font-size: 1rem;
 }
 
 .musculacao-meta-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-bottom: 16px;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.compact-meta-row {
+  margin-bottom: 10px;
 }
 
 .musculacao-meta-pill {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 10px;
-  padding: 12px 14px;
-  border-radius: 14px;
+  padding: 10px 8px;
+  border-radius: 12px;
   background: linear-gradient(135deg, rgba(124, 92, 255, 0.16), rgba(24, 23, 45, 0.88));
   border: 1px solid rgba(168, 145, 255, 0.34);
+  min-height: 52px;
 }
 
-.musculacao-meta-pill span {
-  color: var(--musculacao-muted);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+.compact-pill {
+  padding: 10px 6px;
 }
 
 .musculacao-meta-pill strong {
   color: var(--musculacao-text);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
+  text-align: center;
 }
 
 .musculacao-meta-pill.highlight {
@@ -206,7 +209,11 @@
 
 .single-gif-grid {
   grid-template-columns: 1fr;
-  margin-bottom: 18px;
+  margin-bottom: 0;
+}
+
+.compact-gif-grid {
+  margin-bottom: 0;
 }
 
 .musculacao-media-box {
@@ -225,11 +232,15 @@
   justify-content: center;
 }
 
+.compact-gif-box {
+  padding: 0;
+}
+
 .single-gif-box img {
-  width: min(92%, 720px);
+  width: min(96%, 720px);
   height: auto;
-  max-height: 440px;
-  border-radius: 16px;
+  max-height: 260px;
+  border-radius: 14px;
   object-fit: contain;
   display: block;
   margin: 0 auto;
