@@ -1,123 +1,69 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useState } from 'react';
 
 interface ExerciseSpec {
     name: string;
     series: string;
     repRange: string;
     primaryMuscles: string;
-    muscle: 'quads' | 'glutes' | 'hamstrings' | 'calves';
-    aliases: string[];
+    gifUrl: string;
 }
-
-interface ExerciseDbItem {
-    name?: string;
-    gifUrl?: string;
-    bodyPart?: string;
-    muscle?: string;
-    secondaryMuscles?: string[];
-    equipment?: string;
-    instructions?: string[];
-}
-
-const EXERCISES: ExerciseSpec[] = [
-    { name: 'Leg Press', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Quadríceps, glúteos e panturrilhas', muscle: 'quads', aliases: ['45-degree leg press', 'leg press machine'] },
-    { name: 'Elevação pélvica', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Glúteos, isquiotibiais e core', muscle: 'glutes', aliases: ['machine hip thrust', 'hip thrust machine'] },
-    { name: 'Coice na polia', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Glúteos, posterior da coxa e core', muscle: 'glutes', aliases: ['glute kickback', 'kick back'] },
-    { name: 'Cadeira abdutora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Músculos glúteos médios e laterais', muscle: 'glutes', aliases: ['outer thigh machine', 'hip abductor machine'] },
-    { name: 'Cadeira adutora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Adutores da coxa e glúteos', muscle: 'glutes', aliases: ['inner thigh machine', 'hip adductor machine'] },
-    { name: 'Cadeira extensora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Quadríceps e joelho', muscle: 'quads', aliases: ['leg extension machine'] },
-    { name: 'Cadeira flexora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Isquiotibiais e panturrilhas', muscle: 'hamstrings', aliases: ['seated leg curl machine'] },
-];
 
 const STATIC_API_BASE = 'https://cdn.jsdelivr.net/gh/JahelCuadrado/ExerciseGymGifsDB@v1.1.0';
 
-const normalizeExerciseName = (value: string): string => value
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9\s]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-
-const findMatchingExercise = (exercise: ExerciseSpec, items: ExerciseDbItem[]): ExerciseDbItem | null => {
-    const normalizedAliases = [
-        ...exercise.aliases,
-        exercise.name,
-    ].map(normalizeExerciseName);
-
-    const match = items.find((item) => {
-        const name = normalizeExerciseName(item.name || '');
-        return normalizedAliases.some((alias) => name.includes(alias) || alias.includes(name));
-    });
-
-    return match ?? items[0] ?? null;
-};
+const EXERCISES: ExerciseSpec[] = [
+    {
+        name: 'Leg Press',
+        series: '3 séries',
+        repRange: '8 a 12 repetições',
+        primaryMuscles: 'Quadríceps, glúteos e panturrilhas',
+        gifUrl: `${STATIC_API_BASE}/quads/sled-45-degrees-one-leg-press.gif`,
+    },
+    {
+        name: 'Elevação pélvica',
+        series: '3 séries',
+        repRange: '8 a 12 repetições',
+        primaryMuscles: 'Glúteos, isquiotibiais e core',
+        gifUrl: `${STATIC_API_BASE}/glutes/barbell-glute-bridge.gif`,
+    },
+    {
+        name: 'Coice na polia',
+        series: '3 séries',
+        repRange: '8 a 12 repetições',
+        primaryMuscles: 'Glúteos, posterior da coxa e core',
+        gifUrl: `${STATIC_API_BASE}/glutes/cable-standing-hip-extension.gif`,
+    },
+    {
+        name: 'Cadeira abdutora',
+        series: '3 séries',
+        repRange: '8 a 12 repetições',
+        primaryMuscles: 'Músculos glúteos médios e laterais',
+        gifUrl: `${STATIC_API_BASE}/glutes/lever-seated-hip-abduction.gif`,
+    },
+    {
+        name: 'Cadeira adutora',
+        series: '3 séries',
+        repRange: '8 a 12 repetições',
+        primaryMuscles: 'Adutores da coxa e glúteos',
+        gifUrl: `${STATIC_API_BASE}/glutes/lever-seated-hip-adduction.gif`,
+    },
+    {
+        name: 'Cadeira extensora',
+        series: '3 séries',
+        repRange: '8 a 12 repetições',
+        primaryMuscles: 'Quadríceps e joelho',
+        gifUrl: `${STATIC_API_BASE}/quads/lever-leg-extension.gif`,
+    },
+    {
+        name: 'Cadeira flexora',
+        series: '3 séries',
+        repRange: '8 a 12 repetições',
+        primaryMuscles: 'Isquiotibiais e panturrilhas',
+        gifUrl: `${STATIC_API_BASE}/hamstrings/lever-seated-leg-curl.gif`,
+    },
+];
 
 export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
-    const [exerciseMap, setExerciseMap] = useState<Record<string, ExerciseDbItem | null>>({});
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        let isMounted = true;
-
-        const loadExercises = async () => {
-            try {
-                const results = await Promise.all(
-                    EXERCISES.map(async (exercise) => {
-                        const url = `${STATIC_API_BASE}/api/es/muscles/${exercise.muscle}.json`;
-                        const response = await fetch(url);
-
-                        if (!response.ok) {
-                            return { name: exercise.name, data: null as ExerciseDbItem | null };
-                        }
-
-                        const payload = await response.json() as { exercises?: ExerciseDbItem[] };
-                        const match = findMatchingExercise(exercise, payload.exercises || []);
-
-                        return {
-                            name: exercise.name,
-                            data: match ?? null,
-                        };
-                    })
-                );
-
-                if (!isMounted) return;
-
-                const mapped: Record<string, ExerciseDbItem | null> = {};
-
-                results.forEach(({ name, data }) => {
-                    mapped[normalizeExerciseName(name)] = data;
-                });
-
-                setExerciseMap(mapped);
-            } catch {
-                if (!isMounted) return;
-                setExerciseMap({});
-            } finally {
-                if (isMounted) {
-                    setLoading(false);
-                }
-            }
-        };
-
-        void loadExercises();
-
-        return () => {
-            isMounted = false;
-        };
-    }, []);
-
-    const exercises = useMemo(() => {
-        return EXERCISES.map((exercise) => {
-            const apiEntry = exerciseMap[normalizeExerciseName(exercise.name)] ?? null;
-            return {
-                ...exercise,
-                gifUrl: apiEntry?.gifUrl || '',
-                bodyPart: apiEntry?.bodyPart || 'Pernas',
-                secondaryMuscles: apiEntry?.secondaryMuscles?.join(', ') || exercise.primaryMuscles,
-            };
-        });
-    }, [exerciseMap]);
+    const [exercises] = useState<ExerciseSpec[]>(EXERCISES);
 
     return (
         <div className="cargo-glass-wrapper musculacao-page">
@@ -157,16 +103,12 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
 
                             <div className="musculacao-info-list">
                                 <div>
-                                    <label>Grupo muscular:</label>
-                                    <strong>{exercise.bodyPart}</strong>
-                                </div>
-                                <div>
                                     <label>Foco principal:</label>
                                     <strong>{exercise.primaryMuscles}</strong>
                                 </div>
                                 <div>
-                                    <label>Ativação secundária:</label>
-                                    <strong>{exercise.secondaryMuscles}</strong>
+                                    <label>Objetivo do treino:</label>
+                                    <strong>Força e estabilidade das pernas com foco em movimento controlado e execução técnica.</strong>
                                 </div>
                             </div>
                         </article>
