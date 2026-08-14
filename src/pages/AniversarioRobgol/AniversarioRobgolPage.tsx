@@ -107,9 +107,9 @@ export default function RobgolAniversarioPage() {
                     <div className="glass-card full">
                         <h2>Pagamentos Já Realizados</h2>
                         <ul className="glass-data-list">
-                            <li><span>Espaço</span> <strong>R$ 325,00</strong></li>
-                            <li><span>Seresta</span> <strong>R$ 250,00</strong></li>
-                            <li><span>Mesas e lençóis</span> <strong>R$ 112,50</strong></li>
+                            <li><span>Espaço 50%</span> <strong>R$ 325,00</strong></li>
+                            <li><span>Seresta 50%</span> <strong>R$ 250,00</strong></li>
+                            <li><span>Mesas e lençóis 50%</span> <strong>R$ 112,50</strong></li>
                             <li><span>Plásticos (cartão do Ronaldo)</span> <strong>R$ 256,14</strong></li>
                             <li className="total-row">
                                 <span><strong>Total Pago</strong></span>
