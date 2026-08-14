@@ -1,24 +1,60 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
-interface StaticExerciseEntry {
-    id?: string;
-    slug?: string;
-    name?: string;
-    muscle?: string;
-    bodyPart?: string;
-    equipment?: string;
-    category?: string;
-    secondaryMuscles?: string[];
-    instructions?: string[];
-    file?: string;
-    gifUrl?: string;
+interface ExerciseSpec {
+    name: string;
+    series: string;
+    repRange: string;
+    primaryMuscles: string;
+    muscle: 'quads' | 'glutes' | 'hamstrings' | 'calves';
+    aliases: string[];
 }
 
+interface ExerciseDbItem {
+    name?: string;
+    gifUrl?: string;
+    bodyPart?: string;
+    muscle?: string;
+    secondaryMuscles?: string[];
+    equipment?: string;
+    instructions?: string[];
+}
+
+const EXERCISES: ExerciseSpec[] = [
+    { name: 'Leg Press', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Quadríceps, glúteos e panturrilhas', muscle: 'quads', aliases: ['prensa de piernas', 'maquina', 'press piernas'] },
+    { name: 'Elevação pélvica', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Glúteos, isquiotibiais e core', muscle: 'glutes', aliases: ['elevacion de cadera', 'hip thrust', 'elevación de cadera'] },
+    { name: 'Coice na polia', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Glúteos, posterior da coxa e core', muscle: 'glutes', aliases: ['kick out', 'polea', 'coice'] },
+    { name: 'Cadeira abdutora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Músculos glúteos médios e laterais', muscle: 'glutes', aliases: ['abductora', 'abductors', 'abducción'] },
+    { name: 'Cadeira adutora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Adutores da coxa e glúteos', muscle: 'glutes', aliases: ['aductora', 'adductors', 'aductor'] },
+    { name: 'Cadeira extensora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Quadríceps e joelho', muscle: 'quads', aliases: ['extensión de cuádriceps', 'extensor', 'cuadriceps'] },
+    { name: 'Cadeira flexora', series: '3 séries', repRange: '8 a 12 repetições', primaryMuscles: 'Isquiotibiais e panturrilhas', muscle: 'hamstrings', aliases: ['curl femoral', 'flexora', 'isquiotibiales'] },
+];
+
 const STATIC_API_BASE = 'https://cdn.jsdelivr.net/gh/JahelCuadrado/ExerciseGymGifsDB@v1.1.0';
-const STATIC_API_URL = `${STATIC_API_BASE}/api/es/muscles/quads.json`;
+
+const normalizeExerciseName = (value: string): string => value
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+const findMatchingExercise = (exercise: ExerciseSpec, items: ExerciseDbItem[]): ExerciseDbItem | null => {
+    const normalizedAliases = [
+        ...exercise.aliases,
+        exercise.name,
+    ].map(normalizeExerciseName);
+
+    const match = items.find((item) => {
+        const name = normalizeExerciseName(item.name || '');
+        return normalizedAliases.some((alias) => name.includes(alias) || alias.includes(name));
+    });
+
+    return match ?? items[0] ?? null;
+};
 
 export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack }) => {
-    const [exercises, setExercises] = useState<StaticExerciseEntry[]>([]);
+    const [exerciseMap, setExerciseMap] = useState<Record<string, ExerciseDbItem | null>>({});
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -26,21 +62,37 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
 
         const loadExercises = async () => {
             try {
-                const response = await fetch(STATIC_API_URL);
-                if (!response.ok) {
-                    throw new Error(`Request failed with status ${response.status}`);
-                }
+                const results = await Promise.all(
+                    EXERCISES.map(async (exercise) => {
+                        const url = `${STATIC_API_BASE}/api/es/muscles/${exercise.muscle}.json`;
+                        const response = await fetch(url);
 
-                const payload = await response.json() as { exercises?: StaticExerciseEntry[] };
-                const items = Array.isArray(payload.exercises) ? payload.exercises.slice(0, 7) : [];
+                        if (!response.ok) {
+                            return { name: exercise.name, data: null as ExerciseDbItem | null };
+                        }
 
-                if (isMounted) {
-                    setExercises(items);
-                }
+                        const payload = await response.json() as { exercises?: ExerciseDbItem[] };
+                        const match = findMatchingExercise(exercise, payload.exercises || []);
+
+                        return {
+                            name: exercise.name,
+                            data: match ?? null,
+                        };
+                    })
+                );
+
+                if (!isMounted) return;
+
+                const mapped: Record<string, ExerciseDbItem | null> = {};
+
+                results.forEach(({ name, data }) => {
+                    mapped[normalizeExerciseName(name)] = data;
+                });
+
+                setExerciseMap(mapped);
             } catch {
-                if (isMounted) {
-                    setExercises([]);
-                }
+                if (!isMounted) return;
+                setExerciseMap({});
             } finally {
                 if (isMounted) {
                     setLoading(false);
@@ -54,6 +106,18 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
             isMounted = false;
         };
     }, []);
+
+    const exercises = useMemo(() => {
+        return EXERCISES.map((exercise) => {
+            const apiEntry = exerciseMap[normalizeExerciseName(exercise.name)] ?? null;
+            return {
+                ...exercise,
+                gifUrl: apiEntry?.gifUrl || '',
+                bodyPart: apiEntry?.bodyPart || 'Pernas',
+                secondaryMuscles: apiEntry?.secondaryMuscles?.join(', ') || exercise.primaryMuscles,
+            };
+        });
+    }, [exerciseMap]);
 
     return (
         <div className="cargo-glass-wrapper musculacao-page">
@@ -86,11 +150,11 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
 
                 <div className="musculacao-exercise-grid">
                     {exercises.map((exercise) => (
-                        <article key={exercise.id || exercise.slug || exercise.name} className="musculacao-exercise-card">
+                        <article key={exercise.name} className="musculacao-exercise-card">
                             <div className="musculacao-exercise-header">
                                 <div>
-                                    <h2>{exercise.name || 'Exercício'}</h2>
-                                    <span>{exercise.equipment || 'Corpo'} • {exercise.category || 'Força'}</span>
+                                    <h2>{exercise.name}</h2>
+                                    <span>{exercise.series} • {exercise.repRange}</span>
                                 </div>
                             </div>
 
@@ -98,7 +162,7 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
                                 <div className="musculacao-media-box">
                                     <p>GIF do exercício</p>
                                     {exercise.gifUrl ? (
-                                        <img src={exercise.gifUrl} alt={`${exercise.name || 'Exercício'} em execução`} />
+                                        <img src={exercise.gifUrl} alt={`${exercise.name} em execução`} />
                                     ) : (
                                         <div className="musculacao-media-placeholder">
                                             <span>GIF indisponível</span>
@@ -110,19 +174,15 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
                             <div className="musculacao-info-list">
                                 <div>
                                     <label>Grupo muscular:</label>
-                                    <strong>{exercise.bodyPart || 'Pernas'}</strong>
+                                    <strong>{exercise.bodyPart}</strong>
                                 </div>
                                 <div>
                                     <label>Foco principal:</label>
-                                    <strong>{exercise.muscle || 'Quadríceps'}</strong>
+                                    <strong>{exercise.primaryMuscles}</strong>
                                 </div>
                                 <div>
                                     <label>Ativação secundária:</label>
-                                    <strong>{exercise.secondaryMuscles && exercise.secondaryMuscles.length > 0 ? exercise.secondaryMuscles.join(', ') : 'Não informado'}</strong>
-                                </div>
-                                <div>
-                                    <label>Instrução:</label>
-                                    <strong>{exercise.instructions && exercise.instructions.length > 0 ? exercise.instructions[0] : 'Sem instrução disponível.'}</strong>
+                                    <strong>{exercise.secondaryMuscles}</strong>
                                 </div>
                             </div>
                         </article>
