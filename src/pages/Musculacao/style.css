@@ -151,18 +151,38 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  gap: 12px;
   margin-bottom: 16px;
 }
 
 .musculacao-exercise-header h2 {
-  margin: 0 0 6px;
+  margin: 0;
   color: var(--musculacao-text);
   font-size: 1.08rem;
 }
 
-.musculacao-exercise-header span {
+.musculacao-set-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(124, 92, 255, 0.18), rgba(56, 189, 248, 0.12));
+  border: 1px solid rgba(168, 145, 255, 0.4);
+  min-width: 110px;
+}
+
+.musculacao-set-badge span {
   color: var(--musculacao-muted);
-  font-size: 0.82rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.musculacao-set-badge strong {
+  color: var(--musculacao-text);
+  font-size: 0.9rem;
 }
 
 .musculacao-media-grid {

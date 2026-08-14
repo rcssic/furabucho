@@ -76,7 +76,6 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
                         Voltar
                     </button>
                     <h1>Milena - Treino A</h1>
-                    <p>Treino focado em quadríceps, glúteos e posterior da coxa, com ênfase em força, estabilidade e controle dos movimentos das pernas.</p>
                 </header>
 
                 <div className="musculacao-exercise-grid">
@@ -85,7 +84,10 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
                             <div className="musculacao-exercise-header">
                                 <div>
                                     <h2>{exercise.name}</h2>
-                                    <span>{exercise.series} • {exercise.repRange}</span>
+                                </div>
+                                <div className="musculacao-set-badge">
+                                    <span>{exercise.series}</span>
+                                    <strong>{exercise.repRange}</strong>
                                 </div>
                             </div>
 
@@ -105,10 +107,6 @@ export const MilenaInferioresPage: React.FC<{ onBack: () => void }> = ({ onBack 
                                 <div>
                                     <label>Foco principal:</label>
                                     <strong>{exercise.primaryMuscles}</strong>
-                                </div>
-                                <div>
-                                    <label>Objetivo do treino:</label>
-                                    <strong>Força e estabilidade das pernas com foco em movimento controlado e execução técnica.</strong>
                                 </div>
                             </div>
                         </article>
