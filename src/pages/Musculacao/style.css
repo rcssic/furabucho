@@ -148,6 +148,16 @@
   background: rgba(255, 255, 255, 0.02);
 }
 
+.musculacao-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.musculacao-selection-grid .clickable-card {
+  min-height: 220px;
+}
+
 @media (max-width: 760px) {
   .musculacao-summary {
     grid-template-columns: 1fr;
@@ -156,5 +166,9 @@
   .musculacao-item {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .musculacao-selection-grid {
+    grid-template-columns: 1fr;
   }
 }
