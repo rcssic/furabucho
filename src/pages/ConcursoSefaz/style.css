@@ -1,0 +1,96 @@
+.cargo-glass-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #050505;
+  background-image: radial-gradient(circle at top right, #241508, #050505 68%);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 24px;
+}
+
+.cargo-content-max { width: 100%; max-width: 900px; position: relative; z-index: 1; }
+.cargo-header { margin-bottom: 40px; text-align: left; }
+.cargo-header h1 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 8px; }
+.cargo-header p { color: rgba(255, 255, 255, 0.62); font-size: 1.1rem; margin-bottom: 24px; }
+
+.glass-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px 8px 12px;
+  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f59e0b;
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.glass-link-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f59e0b, #c2410c);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(194, 65, 12, 0.35);
+}
+
+.glass-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.glass-section-title { grid-column: 1 / -1; margin-top: 32px; margin-bottom: 8px; }
+.glass-section-title h2 { color: #fff; font-size: 1.4rem; margin-bottom: 4px; }
+.glass-section-title p { color: rgba(255, 255, 255, 0.5); font-size: 0.95rem; }
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(24px) saturate(150%);
+  -webkit-backdrop-filter: blur(24px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-card.full { grid-column: 1 / -1; }
+.glass-card.padding-zero { padding: 0; overflow: hidden; }
+.glass-card h2 { color: #fff; font-size: 1.25rem; margin-bottom: 20px; }
+.glass-data-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.glass-data-list li { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+.glass-data-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.glass-data-list span { color: rgba(255, 255, 255, 0.5); font-size: 0.95rem; }
+.glass-data-list strong { color: #fef3c7; font-size: 0.95rem; font-weight: 500; text-align: right; }
+.glass-data-list .total-row { border-top: 1px solid rgba(245, 158, 11, 0.25); padding-top: 12px; }
+
+.area-badge { background: rgba(245, 158, 11, 0.11); color: #fbbf24; padding: 12px 24px; font-weight: 600; font-size: 0.9rem; letter-spacing: 0.5px; border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+.specific-badge { margin-top: 20px; color: #fdba74; background: rgba(194, 65, 12, 0.14); }
+.glass-accordion { border-bottom: 1px solid rgba(255, 255, 255, 0.06); }
+.glass-accordion-header { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 24px; background: transparent; border: none; color: #fff; cursor: pointer; text-align: left; }
+.glass-accordion-header:hover { background: rgba(255, 255, 255, 0.025); }
+.glass-accordion-header h3 { font-size: 1.05rem; font-weight: 500; margin: 0; }
+.glass-accordion-header svg { color: #f59e0b; transition: transform 0.3s; }
+.glass-accordion.open .glass-accordion-header svg { transform: rotate(180deg); }
+.glass-accordion-content { overflow: hidden; transition: max-height 0.4s ease, opacity 0.3s ease; }
+.accordion-inner { padding: 0 24px 24px; display: flex; flex-direction: column; }
+.indent-level-1 { color: #f1f5f9; font-size: 0.94rem; line-height: 1.5; padding-left: 14px; border-left: 3px solid rgba(245, 158, 11, 0.65); margin-top: 12px; font-weight: 500; }
+.exam-note { border-color: rgba(245, 158, 11, 0.2); }
+.exam-note p { color: rgba(255, 255, 255, 0.68); line-height: 1.65; margin: 0; }
+
+@media (max-width: 768px) {
+  .cargo-glass-wrapper { padding: 36px 16px; }
+  .cargo-header h1 { font-size: 1.8rem; }
+  .cargo-header p { font-size: 1rem; }
+  .glass-grid { grid-template-columns: 1fr; gap: 16px; }
+  .glass-card { padding: 24px 20px; border-radius: 18px; }
+  .glass-card.full { padding: 0; }
+  .glass-data-list li { align-items: flex-start; }
+  .glass-data-list strong { max-width: 58%; }
+}
